@@ -25,7 +25,13 @@ const { title, description, link, date } = Astro.props
   link && (
     <a
       href={link}
-      class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+      class="bg-white/5 
+    border border-white/10 rounded-full
+    inline-flex justify-center items-center gap-x-2
+    py-1 px-2 md:py-2 md:px-4
+    text-xs md:text-base
+    transition
+    hover:scale-110 hover:bg-white/10"
     >
       Saber más...{" "}
       <svg
