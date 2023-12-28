@@ -25,7 +25,9 @@ const { description, title } = Astro.props
 
   <body class="relative">
     <div
-      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-neutral-100 dark:bg-neutral-950 
+      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))] 
+      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
     >
     </div>
     <Header />
@@ -45,7 +47,7 @@ const { description, title } = Astro.props
   }
 
   body {
-    background: #050505;
+    color: rgba(17, 17, 17, 0.9);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -54,6 +56,12 @@ const { description, title } = Astro.props
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body{
+      color: rgba(255, 255, 255, 0.9);
     }
   }
 </style>
