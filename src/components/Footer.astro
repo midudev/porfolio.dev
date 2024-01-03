@@ -3,9 +3,10 @@
 >
   <div
     class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between"
+    id="footer-content"
   >
     <span class="text-sm sm:text-center text-yellow-800/90 dark:text-yellow-200/90"
-      >© 2023 <a href="https://midu.dev/" class="hover:underline">midudev</a>.
+      >© <span id="current-year"></span> <a href="https://midu.dev/" class="hover:underline">midudev</a>.
       Casi todos los derechos reservados
     </span>
     <ul
@@ -20,3 +21,10 @@
     </ul>
   </div>
 </footer>
+
+<script>
+  const currentYearElement = document.getElementById('current-year');
+  const currentYear = new Date().getFullYear();
+
+  currentYearElement.textContent = currentYear;
+</script>
