@@ -16,22 +16,31 @@ const TAGS = {
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Aulapp - Online lessons platform",
     description:
-      "Created from scratch with Next.js and Tailwind CSS. It's a library with SVG logos from the most popular brands. Optimized for SEO and performance.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
+      "Web app that connects teachers and students in order to give/receive online lessons on the platform using videocalls and a 3D environment.",
+    link: "https://aulapp.ovh",
+    image: "/projects/aulappLanding.png",
+    logo: "/projects/logoAulapp.webp",
     tags: [TAGS.NEXT, TAGS.TAILWIND],
   },
 ]
 ---
 
 {
-  PROJECTS.map(({ image, title, description, tags }) => (
+  PROJECTS.map(({ image, title, description, tags, logo }) => (
     <article>
       <h3 class="text-2xl font-semibold text-yellow-800 dark:text-yellow-200 mb-2">
         {title}
+        {logo && (
+          <img
+            loading="lazy"
+            class="inline-block w-6 h-6 ml-2"
+            src={logo}
+            alt={`Logo del proyecto ${title}`}
+          />
+        )}
+
       </h3>
       <p class="text-lg mb-4 text-pretty">{description}</p>
       <ul class="flex gap-x-2 flex-row mb-2">
