@@ -1,15 +1,18 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import Badge from "../components/Badge.astro"
-import SectionContainer from "../components/SectionContainer.astro"
-import LinkedInIcon from "../components/icons/LinkedIn.astro"
-import SocialPill from "../components/SocialPill.astro"
-import GitHubIcon from "../components/icons/GitHub.astro"
-import MailIcon from "../components/icons/Mail.astro"
-import Experience from "../components/Experience.astro"
-import Briefcase from "../components/icons/Briefcase.astro"
-import CodeIcon from "../components/icons/Code.astro"
-import Projects from "../components/Projects.astro"
+import Layout from "@/layouts/Layout.astro"
+
+import AboutMe from "@/components/AboutMe.astro"
+import Badge from "@/components/Badge.astro"
+import Briefcase from "@/components/icons/Briefcase.astro"
+import CodeIcon from "@/components/icons/Code.astro"
+import Experience from "@/components/Experience.astro"
+import GitHubIcon from "@/components/icons/GitHub.astro"
+import LinkedInIcon from "@/components/icons/LinkedIn.astro"
+import MailIcon from "@/components/icons/Mail.astro"
+import ProfileCheck from "@/components/icons/ProfileCheck.astro"
+import Projects from "@/components/Projects.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import SocialPill from "@/components/SocialPill.astro"
 ---
 
 <Layout
@@ -30,7 +33,7 @@ import Projects from "../components/Projects.astro"
           href="https://linkedin.com/in/midudev"
           target="_blank"
           rel="noopener"
-          class="flex justify-center items-center"
+          class="flex justify-center items-center hover:scale-105 transition"
         >
           <Badge>Disponible para trabajar</Badge>
         </a>
@@ -43,7 +46,7 @@ import Projects from "../components/Projects.astro"
         >
           Desarrollador Web y Creador de Contenido</span
         >
-         .<span class="text-red-800 dark:text-red-200">
+        .<span class="text-red-800 dark:text-red-200">
           De Barcelona, España</span
         >.
         <span class="text-sky-800 dark:text-sky-200"
@@ -54,15 +57,15 @@ import Projects from "../components/Projects.astro"
       <nav class="flex gap-4 mt-8 flex-wrap">
         <SocialPill href="https://linkedin.com/in/midudev">
           <LinkedInIcon class="size-4 md:size-6" />
-           LinkedIn
+          LinkedIn
         </SocialPill>
         <SocialPill href="https://github.com/midudev">
           <GitHubIcon class="size-4 md:size-6" />
-           GitHub
+          GitHub
         </SocialPill>
         <SocialPill href="mailto:miduga@gmail.com">
           <MailIcon class="size-4 md:size-6" />
-           miduga@gmail.com
+          miduga@gmail.com
         </SocialPill>
       </nav>
     </SectionContainer>
@@ -72,7 +75,7 @@ import Projects from "../components/Projects.astro"
         class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
       >
         <Briefcase class="size-7" />
-         Experiencia laboral
+        Experiencia laboral
       </h2>
       <Experience />
     </SectionContainer>
@@ -82,9 +85,19 @@ import Projects from "../components/Projects.astro"
         class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
       >
         <CodeIcon class="size-7" />
-         Proyectos
+        Proyectos
       </h2>
       <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+      >
+        <ProfileCheck class="size-7" />
+        Sobre mi
+      </h2>
+      <AboutMe />
     </SectionContainer>
   </main>
 </Layout>
