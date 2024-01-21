@@ -1,6 +1,10 @@
+---
+import ThemeToggle from './ThemeToggle.astro'
+---
+
 <header
   class={`
-    flex justify-center items-center
+    flex justify-center items-center gap-x-3
     mx-auto
     py-5
     sticky top-0
@@ -34,4 +38,5 @@
       href="/#contacto">Contacto</a
     >
   </nav>
+  <ThemeToggle />
 </header>
