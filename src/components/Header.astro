@@ -10,7 +10,7 @@
 >
   <nav
     class={`
-      border border-black rounded-full
+      menu border border-black rounded-full
       px-3 py-1
       flex flex-row items-center
       bg-neutral-200 dark:bg-black/50
@@ -19,19 +19,46 @@
   >
     <a
       class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
-      href="/#experiencia">Experiencia</a
+      href="#experiencia">Experiencia</a
     >
     <a
       class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
-      href="/#proyectos">Proyectos</a
+      href="#proyectos">Proyectos</a
     >
     <a
       class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
-      href="/#sobre-mi">Sobre mí</a
+      href="#sobre-mi">Sobre mí</a
     >
     <a
       class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
-      href="/#contacto">Contacto</a
+      href="#contacto">Contacto</a
     >
   </nav>
 </header>
+
+<script>
+  const observer = new IntersectionObserver(
+      (entries) => {
+          entries.forEach((entry) => {
+              const id = entry.target.getAttribute("id");
+              const link = document.querySelector(`.menu a[href="#${id}"]`);
+              if (entry.isIntersecting) {
+                link?.classList.add("bg-white/10");
+              } else {
+                link?.classList.remove("bg-white/10");
+              }
+          });
+      },
+      { rootMargin: "-30% 0px -70% 0px" },
+  );
+
+  const menuLinks = document.querySelectorAll(".menu a[href^='#']");
+
+  menuLinks.forEach((menuLink) => {
+      const hash = menuLink.getAttribute("href") ?? '';
+      const target = document.querySelector(hash);
+      if (target) {
+          observer.observe(target);
+      }
+  });
+</script>
