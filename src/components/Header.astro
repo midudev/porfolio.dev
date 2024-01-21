@@ -1,3 +1,23 @@
+---
+const navItems = [
+  {
+    title: 'Experiencia',
+    url: '/#experiencia'
+  },
+  {
+    title: 'Proyectos',
+    url: '/#proyectos'
+  },
+  {
+    title: 'Sobre mí',
+    url: '/#sobre-mi'
+  },
+  {
+    title: 'Contacto',
+    url: '/#contacto'
+  },
+]
+---
 <header
   class={`
     flex justify-center items-center
@@ -17,21 +37,11 @@
       backdrop-blur-2xl
     `}
   >
+  {navItems.map(link => (
     <a
       class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
-      href="/#experiencia">Experiencia</a
+      href={link.url}>{link.title}</a
     >
-    <a
-      class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
-      href="/#proyectos">Proyectos</a
-    >
-    <a
-      class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
-      href="/#sobre-mi">Sobre mí</a
-    >
-    <a
-      class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
-      href="/#contacto">Contacto</a
-    >
+  ))}
   </nav>
 </header>
