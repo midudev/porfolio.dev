@@ -1,3 +1,53 @@
+
+---
+const navItems = [
+  {
+    title: 'Experiencia',
+    url: '/#experiencia'
+  },
+  {
+    title: 'Proyectos',
+    url: '/#proyectos'
+  },
+  {
+    title: 'Sobre mí',
+    url: '/#sobre-mi'
+  },
+  {
+    title: 'Contacto',
+    url: '/#contacto'
+  },
+]
+---
+
+<header
+  class={`
+    flex justify-center items-center
+    mx-auto
+    py-5
+    sticky top-0
+    w-full xl:w-[1120px]
+    z-10
+  `}
+>
+  <nav
+    class={`
+      border border-black rounded-full
+      px-3 py-1
+      flex flex-row items-center
+      bg-neutral-200 dark:bg-black/50
+      backdrop-blur-2xl
+    `}
+  >
+  {navItems.map(link => (
+    <a
+      class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
+      href={link.url}>{link.title}</a
+    >
+  ))}
+  </nav>
+</header>
+  
 <script>
   const $navAElements: Element[] = [...document.querySelectorAll('header nav a')]
 
@@ -14,33 +64,3 @@
     })
   })
 </script>
-
-<header
-  class={`
-    flex justify-center items-center
-    mx-auto
-    py-5
-    sticky top-0
-    w-full xl:w-[1120px]
-    z-10
-  `}
->
-  <nav id="header-nav">
-    <a
-      class="hover:bg-neutral-300 dark:hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
-      href="/#experiencia">Experiencia</a
-    >
-    <a
-      class="hover:bg-neutral-300 dark:hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
-      href="/#proyectos">Proyectos</a
-    >
-    <a
-      class="hover:bg-neutral-300 dark:hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
-      href="/#sobre-mi">Sobre mí</a
-    >
-    <a
-      class="hover:bg-neutral-300 dark:hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
-      href="/#contacto">Contacto</a
-    >
-  </nav>
-</header>
