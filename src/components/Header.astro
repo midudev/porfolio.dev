@@ -1,5 +1,24 @@
 ---
 import ThemeToggle from './ThemeToggle.astro'
+
+const navItems = [
+  {
+    title: 'Experiencia',
+    url: '/#experiencia'
+  },
+  {
+    title: 'Proyectos',
+    url: '/#proyectos'
+  },
+  {
+    title: 'Sobre mí',
+    url: '/#sobre-mi'
+  },
+  {
+    title: 'Contacto',
+    url: '/#contacto'
+  },
+]
 ---
 
 <header
@@ -21,22 +40,29 @@ import ThemeToggle from './ThemeToggle.astro'
       backdrop-blur-2xl
     `}
   >
+  {navItems.map(link => (
     <a
       class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
-      href="/#experiencia">Experiencia</a
+      href={link.url}>{link.title}</a
     >
-    <a
-      class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
-      href="/#proyectos">Proyectos</a
-    >
-    <a
-      class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
-      href="/#sobre-mi">Sobre mí</a
-    >
-    <a
-      class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
-      href="/#contacto">Contacto</a
-    >
+  ))}
   </nav>
   <ThemeToggle />
 </header>
+  
+<script>
+  const $navAElements: Element[] = [...document.querySelectorAll('header nav a')]
+
+  window.addEventListener('scroll', () => {
+    $navAElements.forEach(a => {
+      const selectionForSection = a.getAttribute('href')?.substring(1)
+      const sectionElement: HTMLDivElement | null = document.querySelector(selectionForSection || '')
+
+      if(!sectionElement) return
+      const selectionTop = sectionElement.offsetTop - 150
+      if(window.scrollY <= selectionTop) return
+      $navAElements.forEach(aToRemove => aToRemove.classList.remove('bg-white/15'))
+      a.classList.add('bg-white/15')
+    })
+  })
+</script>
