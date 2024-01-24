@@ -57,7 +57,13 @@ const navItems = [
       const sectionElement: HTMLDivElement | null = document.querySelector(selectionForSection || '')
 
       if(!sectionElement) return
-      const selectionTop = sectionElement.offsetTop - 150
+      let restaAjuste = 0
+      if(window.innerWidth <= 624){
+        restaAjuste = 150
+      }else{
+        restaAjuste = 480
+      }
+      const selectionTop = sectionElement.offsetTop - restaAjuste
       if(window.scrollY <= selectionTop) return
       $navAElements.forEach(aToRemove => aToRemove.classList.remove('bg-white/15'))
       a.classList.add('bg-white/15')
