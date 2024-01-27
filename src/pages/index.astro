@@ -2,17 +2,13 @@
 import Layout from "@/layouts/Layout.astro"
 
 import AboutMe from "@/components/AboutMe.astro"
-import Badge from "@/components/Badge.astro"
 import Briefcase from "@/components/icons/Briefcase.astro"
 import CodeIcon from "@/components/icons/Code.astro"
 import Experience from "@/components/Experience.astro"
-import GitHubIcon from "@/components/icons/GitHub.astro"
-import LinkedInIcon from "@/components/icons/LinkedIn.astro"
-import MailIcon from "@/components/icons/Mail.astro"
 import ProfileCheck from "@/components/icons/ProfileCheck.astro"
 import Projects from "@/components/Projects.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
-import SocialPill from "@/components/SocialPill.astro"
+import Hero from "@/components/Hero.astro"
 ---
 
 <Layout
@@ -20,61 +16,17 @@ import SocialPill from "@/components/SocialPill.astro"
   description="Contrata a midudev para crear tu aplicación web o móvil. Desarrollador Web y Creador de Contenido. Especializado en crear aplicaciones únicas."
 >
   <main class="px-4">
-    <SectionContainer class="py-44 pb-32">
-      <img
-        class="rounded-full size-12 mb-4"
-        src="/midudev.webp"
-        alt="midudev photo"
-      />
-      <h1
-        class="text-gray-900 dark:text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
-      >
-        Hey, soy midudev <a
-          href="https://linkedin.com/in/midudev"
-          target="_blank"
-          rel="noopener"
-          class="flex justify-center items-center hover:scale-105 transition"
-        >
-          <Badge>Disponible para trabajar</Badge>
-        </a>
-      </h1>
-      <h2
-        class="text-xl lg:text-2xl text-balance max-w-[700px] text-black dark:text-white"
-      >
-        <span>+15 años de experiencia.</span><span
-          class="text-yellow-800 dark:text-yellow-200"
-        >
-          Desarrollador Web y Creador de Contenido</span
-        >
-        .<span class="text-red-800 dark:text-red-200">
-          De Barcelona, España</span
-        >.
-        <span class="text-sky-800 dark:text-sky-200"
-          >Especializado en crear aplicaciones únicas.</span
-        >
-      </h2>
-
-      <nav class="flex gap-4 mt-8 flex-wrap">
-        <SocialPill href="https://linkedin.com/in/midudev">
-          <LinkedInIcon class="size-4 md:size-6" />
-          LinkedIn
-        </SocialPill>
-        <SocialPill href="https://github.com/midudev">
-          <GitHubIcon class="size-4 md:size-6" />
-          GitHub
-        </SocialPill>
-        <SocialPill href="mailto:miduga@gmail.com">
-          <MailIcon class="size-4 md:size-6" />
-          miduga@gmail.com
-        </SocialPill>
-      </nav>
+    <SectionContainer class="py-16 md:py-36">
+      <Hero>
+      </slot>
+    </Hero>
     </SectionContainer>
-
+    <div class="space-y-24">
     <SectionContainer id="experiencia">
       <h2
-        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
       >
-        <Briefcase class="size-7" />
+        <Briefcase class="size-8" />
         Experiencia laboral
       </h2>
       <Experience />
@@ -82,7 +34,7 @@ import SocialPill from "@/components/SocialPill.astro"
 
     <SectionContainer id="proyectos">
       <h2
-        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
       >
         <CodeIcon class="size-7" />
         Proyectos
@@ -92,12 +44,13 @@ import SocialPill from "@/components/SocialPill.astro"
 
     <SectionContainer id="sobre-mi">
       <h2
-        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
       >
-        <ProfileCheck class="size-7" />
+        <ProfileCheck class="size-8" />
         Sobre mi
       </h2>
       <AboutMe />
     </SectionContainer>
+  </div>
   </main>
 </Layout>

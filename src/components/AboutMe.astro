@@ -1,10 +1,10 @@
 ---
- const personalImageAlt = "Miguel Ángel picture"
+ const personalImageAlt = "Miguel Ángel"
 ---
 
-<article class="flex flex-col md:flex-row gap-8 justify-center items-center">
+<article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
   <div
-    class="[&>p]:mb-4 [&>p>strong]:text-yellow-400 [&>p>strong]:font-semibold text-pretty order-2 md:order-1"
+    class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
   >
     <p>
       Me llamo Miguel Ángel pero mis amigos me llaman midu. Empecé en la
@@ -30,7 +30,7 @@
     </p>
   </div>
 
-  <img src="/me.png" class="rounded-full size-64 order-1 md:order-2" alt={personalImageAlt}/>
+  <img width="200" height="200" src="/me.png" alt={personalImageAlt} class="order-1 object-cover w-64 h-full p-1 bg-white md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl dark:bg-yellow-500/5 ring-1 ring-white/20 " style="object-position: 50% 50%">
 
 </article>
 
