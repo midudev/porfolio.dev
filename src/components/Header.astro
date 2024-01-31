@@ -74,8 +74,10 @@ const navItems = [
     });
 
     // Cleanup function
-    window.onunload = () => {
-      observer.disconnect();
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect();
+      }
     };
   });
 </script>
