@@ -3,66 +3,95 @@ import ThemeToggle from './ThemeToggle.astro'
 
 const navItems = [
   {
-    title: 'Experiencia',
-    url: '/#experiencia'
+    title: "Experiencia",
+    label: "experiencia",
+    url: "/#experiencia",
   },
   {
-    title: 'Proyectos',
-    url: '/#proyectos'
+    title: "Proyectos",
+    label: "proyectos",
+    url: "/#proyectos",
   },
   {
-    title: 'Sobre mí',
-    url: '/#sobre-mi'
+    title: "Sobre mí",
+    label: "sobre-mi",
+    url: "/#sobre-mi",
   },
   {
-    title: 'Contacto',
-    url: '/#contacto'
+    title: "Contacto",
+    label: "contacto",
+    url: "/#contacto",
   },
 ]
 ---
 
 <header
-  class={`
-    flex justify-center items-center gap-x-3
-    mx-auto
-    py-5
-    sticky top-0
-    w-full xl:w-[1120px]
-    z-10
-  `}
+  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
-  <nav
-    class={`
-      border border-black rounded-full
-      px-3 py-1
-      flex flex-row items-center
-      bg-neutral-200 dark:bg-black/50
-      backdrop-blur-2xl
-    `}
-  >
-  {navItems.map(link => (
-    <a
-      class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
-      href={link.url}>{link.title}</a
-    >
-  ))}
+  <nav class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200">
+    {
+      navItems.map((link) => (
+        <a
+          class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
+          aria-label={link.label}
+          href={link.url}
+        >
+          {link.title}
+        </a>
+      ))
+    }
   </nav>
   <ThemeToggle />
 </header>
-  
+
 <script>
-  const $navAElements: Element[] = [...document.querySelectorAll('header nav a')]
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("section")
+    const navItems = document.querySelectorAll("header nav a")
 
-  window.addEventListener('scroll', () => {
-    $navAElements.forEach(a => {
-      const selectionForSection = a.getAttribute('href')?.substring(1)
-      const sectionElement: HTMLDivElement | null = document.querySelector(selectionForSection || '')
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              item.classList.add("text-yellow-500")
+            } else {
+              item.classList.remove("text-yellow-500")
+            }
+          })
+        }
+      })
+    }
 
-      if(!sectionElement) return
-      const selectionTop = sectionElement.offsetTop - 150
-      if(window.scrollY <= selectionTop) return
-      $navAElements.forEach(aToRemove => aToRemove.classList.remove('bg-white/15'))
-      a.classList.add('bg-white/15')
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
     })
+
+    sections.forEach((section) => {
+      observer.observe(section)
+    })
+
+    // Cleanup function
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect()
+      }
+    }
   })
 </script>
+
+<style>
+  nav {
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  @keyframes nav-shadown {
+    to {
+      @apply shadow-lg ring-1 backdrop-blur bg-gray-300/60 dark:bg-gray-800/60 ring-white/10;
+    }
+  }
+</style>
