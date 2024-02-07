@@ -79,6 +79,10 @@ const navItems = [
     document.onvisibilitychange = () => {
       if (document.visibilityState === "hidden") {
         observer.disconnect()
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section)
+        })
       }
     }
   })
