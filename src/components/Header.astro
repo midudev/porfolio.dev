@@ -20,21 +20,28 @@ const navItems = [
   {
     title: "Contacto",
     label: "contacto",
-    url: "mailto:miduga@gmail.com",
+    url: "mailto:carlosrivera_-717@hotmail.com",
   },
 ]
 ---
 
 <header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
+  class=" fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
   <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
+    class="flex px-3 xsm:text-xs sm:text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
   >
+    <a href="/#home">
+      <img
+        loading="lazy"
+        class="rounded-full xsm:size-6 sm:size-8"
+        src="images/representacion.webp"
+        alt="carlos photo"/>
+    </a>
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
+          class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500"
           aria-label={link.label}
           href={link.url}
         >
@@ -42,7 +49,7 @@ const navItems = [
         </a>
       ))
     }
-    <ThemeToggle />
+   <ThemeToggle />
   </nav>
 </header>
 
@@ -56,9 +63,9 @@ const navItems = [
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-yellow-500")
+              item.classList.add("text-blue-500")
             } else {
-              item.classList.remove("text-yellow-500")
+              item.classList.remove("text-blue-500")
             }
           })
         }
@@ -97,7 +104,9 @@ const navItems = [
 
   @keyframes nav-shadown {
     to {
-      @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/50 ring-white/10;
+      @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/70 ring-white/10 text-black dark:text-white;
+      
     }
+    
   }
 </style>
