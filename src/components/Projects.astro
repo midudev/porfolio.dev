@@ -4,38 +4,47 @@ import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 
-const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
+type tLang = (str: any) => any;
+
+const lang = getLangFromUrl(Astro.url)
+const t:tLang = useTranslations(lang);
+
+
+type TagType = {
+  name: string;
+  class: string;
+  icon: (_props: Record<string, any>) => any;
+};
+
+type TagsType = {
+  [key: string]: TagType;
+};
+
+const TAGS: TagsType = {
+  nextjs: {
+    name: 'Next.js',
+    class: 'bg-[#000] text-white dark:bg-white dark:text-[#000]',
     icon: NextJS,
   },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
+  tailwindcss: {
+    name: 'Tailwind CSS',
+    class: 'bg-[#06b6d4] text-white',
     icon: Tailwind,
   },
+};
+
+interface ProjectType {
+  image: string;
+  imageAlt: string;
+  title: string;
+  description: string;
+  tags: string[];
+  link?: string;
+  github?: string;
 }
-const PROJECTS = [
-  {
-    title: "SVGL - A beautiful library with SVG logos",
-    description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
-  {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
-    description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
-]
+const PROJECTS:ProjectType[] = t('projects');
 ---
 
 <div class="flex flex-col gap-y-16">
@@ -53,18 +62,22 @@ const PROJECTS = [
       {title}
     </h3>
     <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
+      <ul class="flex flex-wrap mb-2 gap-x-2">
+                {tags.map((item) => {
+                  const tag:TagType = TAGS[item];
+                  if(tag) {
+                    return (
+                      <li>
+                        <span
+                          class={`flex gap-x-2 mt-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                        >
+                          <tag.icon class="size-4" />{tag.name}
+                        </span>
+                      </li>
+                    )
+                  }
+                })}
+              </ul>
 
       <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
       <footer class="flex items-end justify-start mt-4 gap-x-4">
