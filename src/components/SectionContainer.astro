@@ -5,7 +5,7 @@ const { class: className, id } = Astro.props
 <section
   id={id}
   data-section={id}
-  class={`section ${className} w-full mx-auto lg:w-[740px] pb-24`}
+  class={`section ${className} scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl`}
 >
   <slot />
 </section>
