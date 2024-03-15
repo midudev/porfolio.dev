@@ -24,7 +24,7 @@ const THEMES = ["Light", "Dark", "System"]
   </button>
   <div
     id="themes-menu"
-    class="absolute opacity-0 scale-80 top-8 right-0 text-sm p-1 min-w-[8rem] rounded-md border border-gray-100 bg-white/70 dark:bg-gray-900/70 dark:border-gray-500/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md"
+    class="absolute hidden scale-80 top-8 right-0 text-sm p-1 min-w-[8rem] rounded-md border border-gray-100 bg-white/90 dark:bg-gray-900/90 dark:border-gray-500/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md"
   >
     <ul>
       {
@@ -40,6 +40,7 @@ const THEMES = ["Light", "Dark", "System"]
 
 <style>
   #themes-menu.open {
+    display: inline;
     animation: scale-up-center 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
 
@@ -48,6 +49,7 @@ const THEMES = ["Light", "Dark", "System"]
       transform: scale(0.8);
       opacity: 0;
     }
+
     to {
       transform: scale(1);
       opacity: 1;
@@ -64,6 +66,7 @@ const THEMES = ["Light", "Dark", "System"]
     if (typeof localStorage !== "undefined") {
       return localStorage.getItem("theme") ?? "system"
     }
+
     return window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light"
