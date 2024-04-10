@@ -59,7 +59,7 @@ const THEMES = ["Light", "Dark", "System"]
 
 <script is:inline>
   let remove = null
-  const matchMedia = window.matchMedia("(prefers-color-scheme: dark)")
+  const _matchMedia = window.matchMedia("(prefers-color-scheme: dark)")
   const themesMenu = document.getElementById("themes-menu")
 
   const getThemePreference = () => {
@@ -82,15 +82,15 @@ const THEMES = ["Light", "Dark", "System"]
     if (remove != null) {
       remove()
     }
-    matchMedia.addEventListener("change", updateTheme)
+    _matchMedia.addEventListener("change", updateTheme)
     remove = () => {
-      matchMedia.removeEventListener("change", updateTheme)
+      _matchMedia.removeEventListener("change", updateTheme)
     }
 
     const themePreference = getThemePreference()
     const isDark =
       themePreference === "dark" ||
-      (themePreference === "system" && matchMedia.matches)
+      (themePreference === "system" && _matchMedia.matches)
 
     updateIcon(themePreference)
     document.documentElement.classList[isDark ? "add" : "remove"]("dark")
