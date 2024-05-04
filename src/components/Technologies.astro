@@ -1,0 +1,61 @@
+---
+import TailwindIcon from "./icons/Tailwind.astro";
+import NextJSIcon from "./icons/NextJS.astro";
+import HTMLIcon from "./icons/HTML.astro";
+import CSSIcon from "./icons/CSS.astro";
+import JavaScriptIcon from "./icons/JavaScript.astro";
+
+enum TechnologyType {
+  Frontend = 1,
+  Backend = 2,
+  Database = 3,
+  Other = 4,
+}
+const TECHNOLOGIES = [
+  {
+    name: 'JavaScript',
+    icon: JavaScriptIcon,
+    colorClasses: 'bg-yellow-500 dark:bg-yellow-300/40',
+    type: TechnologyType.Frontend
+  },
+  {
+    name: 'HTML',
+    icon: HTMLIcon,
+    colorClasses: 'bg-orange-600 dark:bg-orange-500/40',
+    type: TechnologyType.Frontend
+  },
+  {
+    name: 'CSS',
+    icon: CSSIcon,
+    colorClasses: 'bg-blue-500 dark:bg-blue-300/40',
+    type: TechnologyType.Frontend
+  },
+  {
+    name: "Tailwind",
+    icon: TailwindIcon,
+    colorClasses: "bg-blue-500 dark:bg-blue-500/40",
+    type: TechnologyType.Frontend,
+  },
+  {
+    name: "NextJS",
+    icon: NextJSIcon,
+    colorClasses: "bg-black dark:border-slate-600/20 border-2",
+    type: TechnologyType.Frontend,
+  },
+];
+---
+
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  {
+    TECHNOLOGIES.map((technology) => (
+      <div
+        class={`flex flex-col items-center justify-center p-4 transition-all duration-300 ${technology.colorClasses} hover:scale-110 rounded-lg shadow-md`}
+      >
+        <technology.icon className="size-12" />
+        <span class="mt-2 text-sm font-semibold text-white">
+          {technology.name}
+        </span>
+      </div>
+    ))
+  }
+</div>
