@@ -9,6 +9,7 @@ import ProfileCheck from "@/components/icons/ProfileCheck.astro"
 import Projects from "@/components/Projects.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/Hero.astro"
+import Technologies from "@/components/Technologies.astro"
 ---
 
 <Layout
@@ -40,6 +41,16 @@ import Hero from "@/components/Hero.astro"
         Proyectos
       </h2>
       <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="Tecnologias">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <CodeIcon class="size-7" />
+        Tecnologias
+      </h2>
+      <Technologies />
     </SectionContainer>
 
     <SectionContainer id="sobre-mi">
