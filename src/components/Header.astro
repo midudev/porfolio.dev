@@ -95,9 +95,16 @@ const navItems = [
     animation-range: 0 100px;
   }
 
+  nav {
+    @apply dark:bg-gray-800/90 bg-white/50;
+  }
+
   @keyframes nav-shadown {
+    0% {
+      @apply dark:bg-gray-800/0 bg-white/0;
+    }
     to {
-      @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/50 ring-white/10;
+      @apply shadow-lg ring-1 backdrop-blur ring-white/10;
     }
   }
 </style>
