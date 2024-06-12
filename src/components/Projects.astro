@@ -2,13 +2,20 @@
 import GitHub from "./icons/GitHub.astro"
 import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
+import Node from "./icons/Node.astro"
+import Express from "./icons/Express.astro"
+import Stripe from "./icons/Stripe.astro"
+import Twilio from "./icons/Twilio.astro"
+import EC2 from "./icons/EC2.astro"
+import MongoDB from "./icons/MongoDB.astro"
+import Sendgrid from "./icons/Sendgrid.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 
 const TAGS = {
   NEXT: {
     name: "Next.js",
-    class: "bg-black text-white",
+    class: "bg-[#003159] text-white",
     icon: NextJS,
   },
   TAILWIND: {
@@ -19,7 +26,37 @@ const TAGS = {
   NODE: {
     name: "Node Js",
     class: "bg-[#003159] text-white",
-    icon: Tailwind,
+    icon: Node,
+  },
+  EXPRESS:{
+    name: "Express Js",
+    class: "bg-[#003159] text-white",
+    icon: Express,
+  },
+  STRIPE:{
+    name: "Stripe",
+    class: "bg-[#003159] text-white",
+    icon: Stripe,
+  },
+  TWILIO:{
+    name: "Twilio",
+    class: "bg-[#003159] text-white",
+    icon: Twilio,
+  },
+  SENDGRID:{
+    name: "Sendgrid",
+    class: "bg-[#003159] text-white",
+    icon: Sendgrid,
+  },
+  EC2:{
+    name: "EC2",
+    class: "bg-[#003159] text-white",
+    icon: EC2,
+  },
+  MONGODB:{
+    name: "MongoDB",
+    class: "bg-[#003159] text-white",
+    icon: MongoDB,
   },
 }
 const PROJECTS = [
@@ -30,7 +67,7 @@ const PROJECTS = [
     link: "https://www.triada.rocks/",
     github: "https://github.com/triada-project/triada",
     image: "/projects/triada.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.NODE, TAGS.EXPRESS,TAGS.MONGODB, TAGS.STRIPE, TAGS.TWILIO, TAGS.SENDGRID, TAGS.EC2],
   },
   // {
   //   title: "AdventJS - Retos de programación con JavaScript y TypeScript",
@@ -58,7 +95,7 @@ const PROJECTS = [
       {title}
     </h3>
     <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
+      <ul class="flex flex-wrap mb-2 gap-x-2 gap-y-2">
           {tags.map((tag) => (
             <li>
               <span
