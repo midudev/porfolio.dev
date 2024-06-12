@@ -4,11 +4,12 @@ import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Node from "./icons/Node.astro"
 import Express from "./icons/Express.astro"
-import Stripe from "./icons/Stripe.astro"
-import Twilio from "./icons/Twilio.astro"
-import EC2 from "./icons/EC2.astro"
+import JavaScript from "./icons/JavaScript.astro"
+import HTML from "./icons/HTML.astro"
+import CSS from "./icons/CSS.astro"
 import MongoDB from "./icons/MongoDB.astro"
-import Sendgrid from "./icons/Sendgrid.astro"
+import Bootstrap from "./icons/Bootstrap.astro"
+import Sass from "./icons/Sass.astro"
 
 const TAGS = {
   NEXT: {
@@ -31,35 +32,40 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Express,
   },
-  STRIPE:{
-    name: "Stripe",
+  JAVASCRIPT:{
+    name: "JavaScript",
     class: "bg-[#003159] text-white",
-    icon: Stripe,
+    icon: JavaScript,
   },
-  TWILIO:{
-    name: "Twilio",
+  HTML:{
+    name: "HTML",
     class: "bg-[#003159] text-white",
-    icon: Twilio,
+    icon: HTML,
   },
-  SENDGRID:{
-    name: "Sendgrid",
+  BOOTSTRAP:{
+    name: "Bootstrap",
     class: "bg-[#003159] text-white",
-    icon: Sendgrid,
+    icon: Bootstrap,
   },
-  EC2:{
-    name: "EC2",
+  CSS:{
+    name: "CSS",
     class: "bg-[#003159] text-white",
-    icon: EC2,
+    icon: CSS,
   },
   MONGODB:{
     name: "MongoDB",
     class: "bg-[#003159] text-white",
     icon: MongoDB,
   },
+  SASS:{
+    name: "Sass",
+    class: "bg-[#003159] text-white",
+    icon: Sass,
+  },
 }
 const SKILLS = [
   {
-    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.NODE, TAGS.EXPRESS,TAGS.MONGODB, TAGS.STRIPE, TAGS.TWILIO, TAGS.SENDGRID, TAGS.EC2],
+    tags: [TAGS.JAVASCRIPT, TAGS.NEXT, TAGS.TAILWIND, TAGS.NODE, TAGS.EXPRESS,TAGS.MONGODB, TAGS.HTML, TAGS.BOOTSTRAP, TAGS.CSS, TAGS.SASS],
   },
 ]
 ---
@@ -72,7 +78,7 @@ const SKILLS = [
           {tags.map((tag) => (
             <li>
               <span
-                class={`flex gap-x-2 rounded-full text-xl ${tag.class} py-1 px-2 `}
+                class={`flex gap-x-2 rounded-full text-xl ${tag.class} py-2 px-3 `}
               >
                 <tag.icon class="size-6" />
                 {tag.name}
