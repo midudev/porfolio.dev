@@ -25,7 +25,7 @@
 ![Nodejs](https://img.shields.io/badge/-Nodejs-339933?style=for-the-badge&logo=Node.js&labelColor=282c34)
 ![Laravel](https://img.shields.io/badge/-Laravel-FF2D20?style=for-the-badge&logo=laravel&labelColor=282c34)
 ![Django](https://img.shields.io/badge/-Django-092E20?style=for-the-badge&logo=django&labelColor=282c34)
-![Spring](https://img.shields.io/badge/-Django-236DB33F?style=for-the-badge&logo=spring&labelColor=282c34)
+![Spring](https://img.shields.io/badge/-Spring-236DB33F?style=for-the-badge&logo=spring&labelColor=282c34)
 
 ### Database:
 ![MongoDB](https://img.shields.io/badge/-MongoDB-339933?style=for-the-badge&logo=mongodb&labelColor=282c34)
