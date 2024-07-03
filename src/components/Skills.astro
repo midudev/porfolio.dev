@@ -1,0 +1,58 @@
+---
+import Java from './icons/Java.astro'
+import Angular from './icons/Angular.astro'
+import NodeJS from './icons/NodeJS.astro'
+import Typescript from './icons/Typescript.astro'
+import Sql from './icons/Sql.astro'
+import DotNet from './icons/DotNet.astro'
+import Vue from './icons/Vue.astro'
+import Laravel from './icons/Laravel.astro'
+
+const SKILLS = [
+  {
+    lang: 'Java',
+    icon: Java,
+  },
+  {
+    lang: '.NET',
+    icon: DotNet,
+  },
+  {
+    lang: 'Laravel',
+    icon: Laravel,
+  },
+  {
+    lang: 'Angular',
+    icon: Angular,
+  },
+  {
+    lang: 'Vue.js',
+    icon: Vue,
+  },
+  {
+    lang: 'NodeJS',
+    icon: NodeJS,
+  },
+  {
+    lang: 'Typescript',
+    icon: Typescript,
+  },
+  {
+    lang: 'SQL',
+    icon: Sql,
+  },
+]
+---
+
+<div
+  class="flex flex-row justify-between flex-wrap max-md:mx-10 max-md:justify-around items-center gap-8"
+>
+  {
+    SKILLS.map((skill) => (
+      <div class="flex flex-col justify-center items-center gap-3 transition hover:scale-110">
+        <skill.icon class="w-9 h-12" />
+        <span class="text-base">{skill.lang}</span>
+      </div>
+    ))
+  }
+</div>

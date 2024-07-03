@@ -9,6 +9,7 @@ import ProfileCheck from "@/components/icons/ProfileCheck.astro"
 import Projects from "@/components/Projects.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/Hero.astro"
+import Skills from "@/components/Skills.astro"
 ---
 
 <Layout
@@ -23,25 +24,24 @@ import Hero from "@/components/Hero.astro"
     </SectionContainer>
     <div class="space-y-24">
 
-    <!-- <SectionContainer id="habilidades">
-      <h2
+      <SectionContainer id="experiencia">
+        <h2
         class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-      >
-        <Briefcase class="size-8" />
-        Habilidades
-      </h2>
-      <Experience />
-    </SectionContainer> -->
-
-
-    <SectionContainer id="experiencia">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-      >
+        >
         <Briefcase class="size-8" />
         Experiencia laboral
       </h2>
       <Experience />
+    </SectionContainer>
+    
+    <SectionContainer id="skills">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <Briefcase class="size-8" />
+        Skills
+      </h2>
+      <Skills />
     </SectionContainer>
 
     <SectionContainer id="proyectos">
