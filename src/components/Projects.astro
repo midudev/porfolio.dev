@@ -1,46 +1,67 @@
 ---
 import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
+// import NextJS from "./icons/NextJS.astro"
+// import Tailwind from "./icons/Tailwind.astro"
+import Laravel from "./icons/Laravel.astro"
+import Angular from "./icons/Angular.astro"
+import NodeJS from "./icons/NodeJS.astro"
+import Postman from "./icons/Postman.astro"
+import MySql from "./icons/Sql.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
+  ANGULAR: {
+    name: "Angular",
     class: "bg-black text-white",
-    icon: NextJS,
+    icon: Angular,
   },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
+  LARAVEL: {
+    name: "Laravel",
+    class: "bg-[#7a0000] text-white",
+    icon: Laravel,
+  },
+  NODEJS: {
+    name: "NodeJS",
+    class: "bg-[#8bca84] text-white",
+    icon: NodeJS,
+  },
+  POSTMAN: {
+    name: "Postman",
+    class: "bg-[#c67c29] text-white",
+    icon: Postman,
+  },
+  MYSQL: {
+    name: "MySql",
+    class: "bg-black text-white",
+    icon: MySql,
   },
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Sistema de citas médicas con Laravel, Angular , Mysql, Redis , Cron Jobs y Notificación a WhatsApp",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "En Proceso..., Sistema la cual va a gestionar todo el proceso de reserva de citas, desde la programación de horario del doctor , hasta el pago por la atención.",
+    // link: "https://svgl.vercel.app/",
+    github: "https://github.com/BillSaravia/Sistema_Citas_Medicas",
+    image: "/projects/sistema_citas_medicas.webp",
+    tags: [TAGS.ANGULAR, TAGS.LARAVEL, TAGS.MYSQL],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "ChatGPT Open AI: Crear un modelo personalizado",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Legacy: Creación de proyectos con ChatGPT, OpenAI, Node.js y Postman. Utilizando la API y Fine Tuning para potenciar soluciones innovadoras.",
+    github: "https://github.com/BillSaravia/Fine_tuning_OpenAI",
+    image: "/projects/Chat_bot.webp",
+    tags: [TAGS.NODEJS, TAGS.POSTMAN],
   },
 ]
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    // PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    PROJECTS.map(({ image, title, description, tags, github }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
@@ -75,12 +96,12 @@ const PROJECTS = [
               
             </LinkButton>
           )}
-          {link && (
+          {/* {link && (
             <LinkButton href={link}>
               <Link class="size-4" />
               Preview
             </LinkButton>
-          )}
+          )} */}
         </footer>
     </div>
   </div>
