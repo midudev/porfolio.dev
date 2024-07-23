@@ -9,6 +9,9 @@ import Postman from "./icons/Postman.astro"
 import MySql from "./icons/Sql.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import Express from "./icons/Express.astro"
+import React from "./icons/React.astro"
+import MongoDB from "./icons/MongoDB.astro"
 
 const TAGS = {
   ANGULAR: {
@@ -36,8 +39,32 @@ const TAGS = {
     class: "bg-black text-white",
     icon: MySql,
   },
+  REACT: {
+    name: "React",
+    class: "bg-black text-white",
+    icon: React,
+  },
+  EXPRESS: {
+    name: "Express",
+    class: "bg-black text-white",
+    icon: Express,
+  },
+  MONGODB: {
+    name: "Mongo DB",
+    class: "bg-black text-white",
+    icon: MongoDB,
+  },
 }
 const PROJECTS = [
+  {
+    title: "MERN Stack E-commerce",
+    description:
+      "Desarrollo de una plataforma de comercio electrónico (e-commerce) utilizando React para el frontend y una API RESTful implementada con Node.js y Express para el backend. La aplicación incluye pruebas de API realizadas con Postman y utiliza MongoDB como base de datos NoSQL para el almacenamiento de datos.",
+    link: "https://front-ecommerce-react.vercel.app/",
+    github: "https://github.com/BillSaravia/Front-Ecommerce-React",
+    image: "/projects/ecommerceMERN.webp",
+    tags: [TAGS.REACT, TAGS.NODEJS, TAGS.EXPRESS, TAGS.MONGODB, TAGS.POSTMAN],
+  },
   {
     title: "Sistema de citas médicas con Laravel, Angular , Mysql, Redis , Cron Jobs y Notificación a WhatsApp",
     description:
@@ -60,8 +87,8 @@ const PROJECTS = [
 
 <div class="flex flex-col gap-y-16">
   {
-    // PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    PROJECTS.map(({ image, title, description, tags, github }) => (
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    // PROJECTS.map(({ image, title, description, tags, github }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
@@ -96,12 +123,12 @@ const PROJECTS = [
               
             </LinkButton>
           )}
-          {/* {link && (
+          {link && (
             <LinkButton href={link}>
               <Link class="size-4" />
               Preview
             </LinkButton>
-          )} */}
+          )}
         </footer>
     </div>
   </div>
@@ -109,6 +136,5 @@ const PROJECTS = [
     ))
   }
 </div>
-
 
 
