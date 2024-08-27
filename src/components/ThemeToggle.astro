@@ -8,6 +8,7 @@ const THEMES = ["Light", "Dark", "System"]
 
 <div class="relative ml-1 mr-1">
   <button
+    transition:persist
     id="theme-toggle-btn"
     class="appearance-none border-none flex hover:scale-125 transition"
   >
@@ -23,6 +24,7 @@ const THEMES = ["Light", "Dark", "System"]
     />
   </button>
   <div
+    transition:persist
     id="themes-menu"
     class="absolute hidden scale-80 top-8 right-0 text-sm p-1 min-w-[8rem] rounded-md border border-gray-100 bg-white/90 dark:bg-gray-900/90 dark:border-gray-500/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md"
   >
@@ -111,5 +113,10 @@ const THEMES = ["Light", "Dark", "System"]
       localStorage.setItem("theme", e.target.innerText.toLowerCase().trim())
       updateTheme()
     })
+  })
+
+  document.addEventListener('astro:after-swap', () => {
+    updateTheme();
+    window.scrollTo({ left: 0, top: 0, behavior: 'instant' });
   })
 </script>
