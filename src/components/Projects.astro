@@ -55,6 +55,12 @@ const PROJECTS = [
     <div class="flex flex-wrap mt-2">
       <ul class="flex flex-row mb-2 gap-x-2">
           {tags.map((tag) => (
+
+// Añadí esta línea para asegurarme de que los tags solo se rendericen si tienen una clase y un ícono definidos.
+// Esta modificación me ha funcionado para que los íconos que antes no aparecían ahora se muestren correctamente, 
+// y quiero compartir este ajuste en caso de que sea útil para otros.
+tag?.class && tag?.icon && (
+//------------------
             <li>
               <span
                 class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
@@ -63,6 +69,9 @@ const PROJECTS = [
                 {tag.name}
               </span>
             </li>
+//Cerrar el parentésis añadido
+)
+//-----------
           ))}
         </ul>
 
