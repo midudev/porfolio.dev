@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  link: string;
+}
+
+const { title, description, link } = Astro.props;
+---
+<div class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg space-y-6">
+  <!-- Título -->
+  <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200">
+    {title}
+  </h2>
+
+  <!-- Descripción -->
+  <p class="text-lg text-gray-700 dark:text-gray-300 text-center">
+    {description}
+  </p>
+
+  <!-- Contenedor del Video Responsivo con Aspect Ratio -->
+  <div class="w-full max-w-4xl">
+    <div class="aspect-w-16 aspect-h-9">
+      <video
+        controls
+        class="w-full h-full rounded-lg"
+      >
+        <source src={link} type="video/mp4" />
+        Tu navegador no soporta la etiqueta de video.
+      </video>
+    </div>
+  </div>
+</div>
