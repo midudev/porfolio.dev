@@ -1,46 +1,13 @@
 ---
 import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
-
-const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJS,
-  },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
-  },
-}
-const PROJECTS = [
-  {
-    title: "React Journal",
-    description:
-      "Journal app created with React, Redux and Typescript.",
-    github: "https://github.com/em-jose/react-journal",
-    image: "/projects/journal_app.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
-  {
-    title: "JS Calendar",
-    description:
-      "Calendar app built with React and React Redux. The app allows you to create a user and manage a calendar.",
-    link: "https://js-calendar-frontend.vercel.app/",
-    github: "https://github.com/em-jose/js-calendar-frontend",
-    image: "/projects/calendar_app.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
-]
+import { Projects as PROJECTS } from "@/data/Projects"
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    PROJECTS.map(({ image, title, description, tags, link, github }: Project) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
