@@ -4,8 +4,8 @@ export const Experience: Experience[] = [
         title: "Full-stack developer",
         company: "Línea Gráfica",
         description: [
-            "Development of fully customized modules/plug-ins in Prestashop and Shopify",
             "ERP and API integrations of different services both on Laravel and Prestashop",
+            "Development of fully customized modules/plug-ins in Prestashop and Shopify",
             "Creation of dynamic and responsive user interfaces using React and CSS",
         ],
     },
