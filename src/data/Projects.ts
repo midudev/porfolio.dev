@@ -22,7 +22,7 @@ export const Projects: Project[] = [
         description: "Calendar app back-end built with NodeJS and ExpressJS.",
         link: "https://js-calendar-backend.up.railway.app/",
         github: "https://github.com/em-jose/js-calendar-backend",
-        image: "/projects/calendar_app.webp",
+        image: "/projects/calendar_app_backend.webp",
         tags: [ProjectTags.NODEJS, ProjectTags.EXPRESSJS, ProjectTags.MONGODB],
     },
 ];
