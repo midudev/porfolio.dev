@@ -28,25 +28,30 @@ const { description, title } = Astro.props
 <body class="relative text-black dark:text-white">
   
   
+  ---
   <script>
     import ApexCharts from "apexcharts";
-  
-    // when the page loads
+   
     document.addEventListener("DOMContentLoaded", () => {
-      // look for each of our charts
-      document.querySelectorAll(".chart-container").forEach((chartDiv) => {
-        // extract our Apex Charts config and render it out
-        const chartDataAttr = chartDiv.getAttribute("data-chart");
-        if (chartDataAttr) {
-          const chartData = JSON.parse(chartDataAttr);
-          const chart = new ApexCharts(
-            chartDiv,
-            chartData
-          );
-          chart.render();
-        }
-      });
-    });
+  console.log("Chart rendering script loaded!");
+  document.querySelectorAll(".chart-container").forEach((chartDiv) => {
+    console.log("Found chart container:", chartDiv);
+    const chartDataAttr = chartDiv.getAttribute("data-chart");
+    if (chartDataAttr) {
+      try {
+        const chartData = JSON.parse(chartDataAttr);
+        console.log("Chart data:", chartData);
+
+        const chart = new ApexCharts(chartDiv, chartData);
+        chart.render();
+      } catch (err) {
+        console.error("Error parsing chart data or rendering chart:", err);
+      }
+    } else {
+      console.warn("No data-chart attribute found on chart container.");
+    }
+  });
+});
   </script>
   
   <div

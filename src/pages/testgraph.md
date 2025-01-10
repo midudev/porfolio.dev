@@ -20,3 +20,4 @@ Here is an example of a bar chart rendered using the custom rehype plugin:
   }
 }
 ```
+
