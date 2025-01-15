@@ -1,39 +1,65 @@
 ---
 import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
+import JS from "./icons/JS.astro"
+import Python from "./icons/Python.astro"
+import MYSQL from "./icons/MYSQL.astro"
+import Pandas from "./icons/Pandas.astro"
+import PHP from "./icons/PHP.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
+  JS: {
+    name: "Javascript",
     class: "bg-black text-white",
-    icon: NextJS,
+    icon: JS,
   },
-  TAILWIND: {
-    name: "Tailwind CSS",
+  PYTHON: {
+    name: "Python",
+    class: "bg-black text-white",
+    icon: Python,
+  },
+  MYSQL: {
+    name: "MySQL",
     class: "bg-[#003159] text-white",
-    icon: Tailwind,
+    icon: MYSQL,
+  },
+  PANDAS: {
+    name: "Pandas",
+    class: "bg-[#003159] text-white",
+    icon: Pandas,
+  },
+  PHP: {
+    name: "PHP",
+    class: "bg-[#003179] text-white",
+    icon: PHP,
   },
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Estudio Steam",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
+      "Resultados destacados incluyen la identificación de tendencias clave en ventas, géneros más populares y el impacto de juegos Early Access en las reviews. Implementado con Python y Pandas, este proyecto ayudó a comprender mejor el comportamiento de los jugadores y las dinámicas del mercado.",
     link: "https://svgl.vercel.app/",
     github: "https://github.com/pheralb/svgl",
     image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.PYTHON, TAGS.PANDAS],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "Estudio Pokemon",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
+      "Con este proyecto, generamos insights sobre los datos de Pokémon a lo largo de sus generaciones, ayudando a visualizar patrones de diseño y equilibrio del juego. Destacando las gráficas interactivas creadas con Plotly.",
     link: "https://adventjs.dev",
     image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.PYTHON, TAGS.PANDAS],
+  },
+  {
+    title: "Clientes frecuentes Palacio Negro",
+    description:
+      "Desarrollo para registrar a los clientes del Palacio Negro, y alimentar el funnel de publicidad. Se desarrolló en servidor PHP, utilizando JS y CSS. El almacenamiento está en bases de datos MySQL.",
+    link: "https://presos.elpalacionegro.com",
+    image: "/projects/adventjs.webp",
+    tags: [TAGS.JS, TAGS.MYSQL, TAGS.PHP],
   },
 ]
 ---
