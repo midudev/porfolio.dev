@@ -1,0 +1,17 @@
+---
+interface Props {
+  title: string
+  description: string
+  src: string
+}
+
+const { title, description, src } = Astro.props
+
+---
+
+
+<section class="project">
+  <h3 class="text-xl font-bold text-yellow-400">{title}</h3>
+  <p class="text-gray-600 dark:text-gray-300">{description}</p>
+  <iframe src={src} width="100%" height="1200" class="mt-4 border rounded-md"></iframe>
+</section>

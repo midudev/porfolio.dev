@@ -3,9 +3,16 @@ import Layout from "@/layouts/Layout.astro"
 import ProjectContent from "@/components/ProjectContent.astro"
 import ProjecTitle from "@/components/ProjecTitle.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
+import Steamproject from '@/components/project_steam.astro';
+const steam_info={
+  title: "Jupyter Notebook del Estudio Steam",
+  description: "Destacando el uso de la librería Pandas y Seaborn.",
+  src: "https://nbviewer.org/github/Dexinator/steam/blob/main/steam.ipynb"
+}
 ---
 
 <Layout   title="Estudio Steam"
+
 description="Análisis de la librería de Steam por Jorge Badillo">
 <ProjectContent>
       <ProjecTitle>Estudio Steam</ProjecTitle>
@@ -28,8 +35,6 @@ description="Análisis de la librería de Steam por Jorge Badillo">
         <li>10. ¿Cómo ha evolucionado el número de achievements (trofeos) por juego?</li>
       </ol>
     </SectionContainer>
-
-      <p>Hola</p>
-
+    <Steamproject {...steam_info}/>
 </ProjectContent>
 </Layout>
