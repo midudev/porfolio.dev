@@ -59,28 +59,33 @@ const THEMES = ["Light", "Dark", "System"]
   }
 </style>
 
-<script is:inline>
-  let remove = null
-  const matchMedia = window.matchMedia("(prefers-color-scheme: dark)")
-  const themesMenu = document.getElementById("themes-menu")
+<script>
+  type ThemePreference = "dark" | "light" | "system"
 
-  const getThemePreference = () => {
+  const DARK: ThemePreference = "dark"
+  const LIGHT: ThemePreference = "light"
+  const SYSTEM: ThemePreference = "system"
+  const THEME_STORAGE_KEY = "theme"
+
+  let remove: (() => void) | null = null
+  const matchMedia = window.matchMedia("(prefers-color-scheme: dark)")
+  const themesMenu = document.getElementById("themes-menu") as HTMLDivElement
+
+  const getThemePreference = (): ThemePreference => {
     if (typeof localStorage !== "undefined") {
-      return localStorage.getItem("theme") ?? "system"
+      return (localStorage.getItem(THEME_STORAGE_KEY) as ThemePreference) ?? SYSTEM
     }
 
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light"
+    return matchMedia.matches ? DARK : LIGHT
   }
 
-  const updateIcon = (themePreference) => {
-    document.querySelectorAll(".theme-toggle-icon").forEach((element) => {
+  const updateIcon = (themePreference: ThemePreference): void => {
+    document.querySelectorAll<HTMLElement>(".theme-toggle-icon").forEach((element) => {
       element.style.scale = element.id === themePreference ? "1" : "0"
     })
   }
 
-  const updateTheme = () => {
+  const updateTheme = (): void => {
     if (remove != null) {
       remove()
     }
@@ -91,26 +96,28 @@ const THEMES = ["Light", "Dark", "System"]
 
     const themePreference = getThemePreference()
     const isDark =
-      themePreference === "dark" ||
-      (themePreference === "system" && matchMedia.matches)
+      themePreference === DARK ||
+      (themePreference === SYSTEM && matchMedia.matches)
 
     updateIcon(themePreference)
-    document.documentElement.classList[isDark ? "add" : "remove"]("dark")
+    document.documentElement.classList.toggle("dark", isDark)
   }
 
   updateTheme()
 
   document.addEventListener("click", () => themesMenu.classList.remove("open"))
 
-  document.getElementById("theme-toggle-btn").addEventListener("click", (e) => {
+  document.getElementById("theme-toggle-btn")?.addEventListener("click", (e) => {
     e.stopPropagation()
     const isClosed = !themesMenu.classList.contains("open")
-    themesMenu.classList[isClosed ? "add" : "remove"]("open")
+    themesMenu.classList.toggle("open", isClosed)
   })
 
-  document.querySelectorAll(".themes-menu-option").forEach((element) => {
+  document.querySelectorAll<HTMLLIElement>(".themes-menu-option").forEach((element) => {
     element.addEventListener("click", (e) => {
-      localStorage.setItem("theme", e.target.innerText.toLowerCase().trim())
+      const target = e.target as HTMLElement
+      const theme = target.innerText.toLowerCase().trim() as ThemePreference
+      localStorage.setItem(THEME_STORAGE_KEY, theme)
       updateTheme()
     })
   })
