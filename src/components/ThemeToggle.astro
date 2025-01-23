@@ -99,7 +99,7 @@ const THEMES = ["Light", "Dark", "System"]
       (themePreference === SYSTEM && matchMedia.matches)
 
     updateIcon(themePreference)
-    document.documentElement.classList[isDark ? "add" : "remove"]("dark")
+    document.documentElement.classList.toggle("dark", isDark)
   }
 
   updateTheme()
@@ -109,7 +109,7 @@ const THEMES = ["Light", "Dark", "System"]
   document.getElementById("theme-toggle-btn")?.addEventListener("click", (e) => {
     e.stopPropagation()
     const isClosed = !themesMenu.classList.contains("open")
-    themesMenu.classList[isClosed ? "add" : "remove"]("open")
+    themesMenu.classList.toggle("open", isClosed)
   })
 
   document.querySelectorAll<HTMLLIElement>(".themes-menu-option").forEach((element) => {
