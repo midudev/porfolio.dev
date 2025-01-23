@@ -69,7 +69,7 @@ const THEMES = ["Light", "Dark", "System"]
       return localStorage.getItem("theme") ?? "system"
     }
 
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
+    return matchMedia.matches
       ? "dark"
       : "light"
   }
