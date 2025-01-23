@@ -65,6 +65,7 @@ const THEMES = ["Light", "Dark", "System"]
   const DARK: ThemePreference = "dark"
   const LIGHT: ThemePreference = "light"
   const SYSTEM: ThemePreference = "system"
+  const THEME_STORAGE_KEY = "theme"
 
   let remove: (() => void) | null = null
   const matchMedia = window.matchMedia("(prefers-color-scheme: dark)")
@@ -72,7 +73,7 @@ const THEMES = ["Light", "Dark", "System"]
 
   const getThemePreference = (): ThemePreference => {
     if (typeof localStorage !== "undefined") {
-      return (localStorage.getItem("theme") as ThemePreference) ?? SYSTEM
+      return (localStorage.getItem(THEME_STORAGE_KEY) as ThemePreference) ?? SYSTEM
     }
 
     return matchMedia.matches ? DARK : LIGHT
@@ -116,7 +117,7 @@ const THEMES = ["Light", "Dark", "System"]
     element.addEventListener("click", (e) => {
       const target = e.target as HTMLElement
       const theme = target.innerText.toLowerCase().trim() as ThemePreference
-      localStorage.setItem("theme", theme)
+      localStorage.setItem(THEME_STORAGE_KEY, theme)
       updateTheme()
     })
   })
