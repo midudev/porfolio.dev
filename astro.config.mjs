@@ -7,7 +7,7 @@ import {rehypeChart} from './src/plugins/rehype-chart.js';
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), robotsTxt()],
-  site: 'https://porfolio.dev/',
+  site: 'https://jorgebadillo.com/',
   markdown: {
     rehypePlugins: [rehypeChart]
   }
