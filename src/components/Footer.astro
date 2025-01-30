@@ -1,4 +1,7 @@
 ---
+import Badge from "./Badge.astro"
+import AstroIcon from "./icons/AstroIcon.astro"
+
 const currentYear = new Date().getFullYear()
 ---
 
@@ -12,6 +15,17 @@ const currentYear = new Date().getFullYear()
       >© {currentYear}
       <a href="https://www.linkedin.com/in/david-burgos-bueso/" class="hover:underline hover:text-emerald-500">dburgos</a>.
     </span>
+
+    <!-- <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90">
+      made with
+      <AstroIcon class="inline-block w-4 h-4 text-emerald-500 bg-gray-500 rounded-full dark:bg-transparent" alt="Astro framework icon"/>
+    </span> -->
+
+    <Badge class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90 text-justify">
+      made with 
+      <AstroIcon class="inline-block w-5 h-5 ml-1 bg-emerald-600 rounded-full p-1 dark:bg-transparent dark:p-0 dark:w-4 dark:h-4" alt="Astro framework icon"/>
+    </Badge>
+
     <ul
       class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
     >
