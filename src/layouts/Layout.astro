@@ -27,9 +27,11 @@ const { description, title } = Astro.props
 
   <body class="relative text-black dark:text-white">
     <div
-      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
-      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
-      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+      class="absolute inset-0 -z-10 min-h-screen w-full bg-gray-50 dark:bg-gray-950 
+      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(16,185,129,0.2),rgba(255,255,255,0.95))] 
+      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(4,120,87,0.6),rgba(255,255,255,0))] 
+      before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(rgba(229,231,235,1)_1px,transparent_1px)] before:[background-size:16px_16px] 
+      dark:before:bg-[radial-gradient(rgba(55,65,81,0.25)_1px,transparent_1px)]"
     >
     </div>
     <Header />
