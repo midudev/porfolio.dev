@@ -10,7 +10,7 @@ import Projects from "@/components/Projects.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/Hero.astro"
 import Technologies from "@/components/Technologies.astro"
----
+import TitleSection from "@/components/TitleSection.astro"
 
 <Layout
   title="Porfolio de midudev - Desarrollador y Programador Web con 15 años de experiencia"
@@ -24,22 +24,18 @@ import Technologies from "@/components/Technologies.astro"
     </SectionContainer>
     <div class="space-y-24">
     <SectionContainer id="experiencia">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-      >
+      <TitleSection>
         <Briefcase class="size-8" />
         Experiencia laboral
-      </h2>
+      </TitleSection>
       <Experience />
     </SectionContainer>
 
     <SectionContainer id="proyectos">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-      >
+      <TitleSection>
         <CodeIcon class="size-7" />
         Proyectos
-      </h2>
+      </TitleSection>
       <Projects />
     </SectionContainer>
 
@@ -54,12 +50,10 @@ import Technologies from "@/components/Technologies.astro"
     </SectionContainer>
 
     <SectionContainer id="sobre-mi">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
-      >
+      <TitleSection>
         <ProfileCheck class="size-8" />
         Sobre mí
-      </h2>
+      </TitleSection>
       <AboutMe />
     </SectionContainer>
   </div>
