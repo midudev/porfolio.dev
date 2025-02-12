@@ -3,24 +3,24 @@ import ThemeToggle from "./ThemeToggle.astro"
 
 const navItems = [
   {
-    title: "Experiencia",
-    label: "experiencia",
-    url: "/#experiencia",
+    title: "Work Experience",
+    label: "experience",
+    url: "/#experience",
   },
   {
-    title: "Proyectos",
-    label: "proyectos",
-    url: "/#proyectos",
+    title: "Projects",
+    label: "projects",
+    url: "/#projects",
   },
   {
-    title: "Sobre mí",
-    label: "sobre-mi",
-    url: "/#sobre-mi",
+    title: "About Me",
+    label: "about-me",
+    url: "/#about-me",
   },
   {
-    title: "Contacto",
-    label: "contacto",
-    url: "mailto:miduga@gmail.com",
+    title: "Contact",
+    label: "contact",
+    url: "mailto:dburgos834@gmail.com",
   },
 ]
 ---
@@ -34,7 +34,7 @@ const navItems = [
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500"
+          class="relative block px-2 py-2 transition hover:text-emerald-500 dark:hover:text-emerald-500"
           aria-label={link.label}
           href={link.url}
         >
@@ -56,9 +56,9 @@ const navItems = [
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-blue-500")
+              item.classList.add("text-emerald-500")
             } else {
-              item.classList.remove("text-blue-500")
+              item.classList.remove("text-emerald-500")
             }
           })
         }
