@@ -5,50 +5,67 @@ import ProjecTitle from "@/components/ProjecTitle.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import Steamproject from '@/components/project_steam.astro';
 import steamdata from 'src/components/Data/steamdata.json';
-const steam_info={
-  title: "Jupyter Notebook del Estudio Steam",
-  description: "Da clic aquí para ver con el jupyter notebook y ver otros pasos como la limpieza y manejo de datos. Está comentado para hacer más fácil su legibilidad paso a paso.",
+import { getLangFromUrl } from 'src/i18n/utils.ts';
+
+const lang = getLangFromUrl(Astro.url); // Obtén el idioma de la URL
+
+const steam_info = {
+  title: lang === 'es' ? "Jupyter Notebook del Estudio Steam" : "Steam Study Jupyter Notebook",
+  description: lang === 'es' 
+    ? "Da clic aquí para ver con el jupyter notebook y ver otros pasos como la limpieza y manejo de datos. Está comentado para hacer más fácil su legibilidad paso a paso." 
+    : "Click here to view the Jupyter notebook and see other steps such as data cleaning and handling. It is commented for easier step-by-step readability.",
   src: "https://nbviewer.org/github/Dexinator/steam/blob/main/steam.ipynb"
 }
 ---
 
-<Layout   title="Estudio Steam"
-
-description="Análisis de la librería de Steam por Jorge Badillo">
-<ProjectContent>
-  <ProjecTitle>Estudio Steam</ProjecTitle>
-  <SectionContainer>
-    <img src="videogames.webp"/>
-    
-  </SectionContainer:>
-  <SectionContainer>
-    <p>Fui contratado por un estudio de videojuegos para analizar datos de la plataforma Steam, buscando información clave para su próximo desarrollo. Les ayudé a plantear las preguntas más relevantes y obtener conclusiones.</p>
-    <p>DISCLAIMER: Por motivos de protección de datos y cómo fue acordado con mi cliente, el dataset aquí presentado tiene como fecha límite MAYO 2019, 5 años menos a cuando fue realizado el estudio. Además, algunas conclusiones han sido recortadas o cambiadas del reporte final entregado. Estoy disponible para cualquier duda/aclaración :)</p>
-  </SectionContainer>
-  <Steamproject {...steam_info}>
-  <SectionContainer>
-    <p>Este análisis tuvo como objetivo contestar las siguientes preguntas:</p>
-    <div class="w-full px-4 py-3 text-left text-yellow-400 break-words rounded">
-      <div class="mx-auto text-xl font-semibold"><strong>Tabla de contenidos</strong></div>
-      {
-        steamdata.map(({titulo}) => {
-          const tituloCorto = titulo.split(".")[0]; // Obtener la parte antes del primer "."
-          return (
-            <ul class="mt-2 list-disc px-2 pl-6">
-              <li>
-                <a
-                  class="block hover:bg-gray-200 hover:text-black px-2 py-1 rounded"
-                  href={`#${tituloCorto}`}
-                >
-                  {titulo}
-                </a>
-              </li>
-            </ul>
-          );
-        })
-      }
-    </div>
-  </SectionContainer>
-</Steamproject>
-</ProjectContent>
+<Layout 
+  title={lang === 'es' ? "Estudio Steam" : "Steam Study"}
+  description={lang === 'es' ? "Análisis de la librería de Steam por Jorge Badillo" : "Steam library analysis by Jorge Badillo"}
+>
+  <ProjectContent>
+    <ProjecTitle>{lang === 'es' ? "Estudio Steam" : "Steam Study"}</ProjecTitle>
+    <SectionContainer>
+      <img src="/projects/videogames.webp" alt={lang === 'es' ? "Estudio Steam" : "Steam Study"} />
+    </SectionContainer>
+    <SectionContainer>
+      <p>
+        {lang === 'es' 
+          ? "Fui contratado por un estudio de videojuegos para analizar datos de la plataforma Steam, buscando información clave para su próximo desarrollo. Les ayudé a plantear las preguntas más relevantes y obtener conclusiones." 
+          : "I was hired by a game studio to analyze data from the Steam platform, looking for key information for their next development. I helped them formulate the most relevant questions and draw conclusions."
+        }
+      </p>
+      <p>
+        {lang === 'es' 
+          ? "DISCLAIMER: Por motivos de protección de datos y cómo fue acordado con mi cliente, el dataset aquí presentado tiene como fecha límite MAYO 2019, 5 años menos a cuando fue realizado el estudio. Además, algunas conclusiones han sido recortadas o cambiadas del reporte final entregado. Estoy disponible para cualquier duda/aclaración :)" 
+          : "DISCLAIMER: For data protection reasons and as agreed with my client, the dataset presented here has a cutoff date of MAY 2019, 5 years before the study was conducted. Additionally, some conclusions have been trimmed or changed from the final report delivered. I am available for any questions/clarifications :)"
+        }
+      </p>
+    </SectionContainer>
+    <Steamproject {...steam_info}>
+      <SectionContainer>
+        <p>{lang === 'es' ? "Este análisis tuvo como objetivo contestar las siguientes preguntas:" : "This analysis aimed to answer the following questions:"}</p>
+        <div class="w-full px-4 py-3 text-left text-yellow-400 break-words rounded">
+          <div class="mx-auto text-xl font-semibold"><strong>{lang === 'es' ? "Tabla de contenidos" : "Table of Contents"}</strong></div>
+          {
+            steamdata.map((item) => {
+              const data = item[lang]; // Accede a los datos en el idioma correcto
+              const tituloCorto = data.titulo.split(".")[0]; // Obtener la parte antes del primer "."
+              return (
+                <ul class="mt-2 list-disc px-2 pl-6">
+                  <li>
+                    <a
+                      class="block hover:bg-gray-200 hover:text-black px-2 py-1 rounded"
+                      href={`#${tituloCorto}`}
+                    >
+                      {data.titulo}
+                    </a>
+                  </li>
+                </ul>
+              );
+            })
+          }
+        </div>
+      </SectionContainer>
+    </Steamproject>
+  </ProjectContent>
 </Layout>

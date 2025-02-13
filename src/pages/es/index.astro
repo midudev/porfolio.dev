@@ -12,6 +12,7 @@ import Hero from "@/components/Hero.astro"
 import TitleSection from "@/components/TitleSection.astro"
 import Grad from "@/components/icons/Grad.astro"
 import Education from "@/components/Education.astro"
+import LanguagePicker from "@/components/LanguagePicker.astro"
 
 import { getLangFromUrl } from 'src/i18n/utils.ts';
 
@@ -25,6 +26,7 @@ const lang = getLangFromUrl(Astro.url);
 >
   <main class="px-4">
     <SectionContainer class="py-16 md:py-36">
+      <LanguagePicker/>
       <Hero>
       </slot>
     </Hero>

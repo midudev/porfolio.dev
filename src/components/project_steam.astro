@@ -1,15 +1,10 @@
 ---
 import steamdata from './Data/steamdata.json';
-interface Props {
-  title: string
-  description: string
-  src: string
-}
+import { getLangFromUrl } from 'src/i18n/utils.ts';
 
-const { title, description, src } = Astro.props
-
+const { title, description, src } = Astro.props;
+const lang = getLangFromUrl(Astro.url); // Obtén el idioma de la URL
 ---
-
 
 <section class="project">
   <h3 class="text-xl font-bold text-yellow-400">{title}</h3>
@@ -19,27 +14,26 @@ const { title, description, src } = Astro.props
 </section>
 <slot></slot>
 {
-  steamdata.map(({titulo, conclusiones, imagenes}) => {
-    const tituloCorto = titulo.split(".")[0]; // Obtener la parte antes del primer "."
-    return(
-    <h3 class={`text-xl font-bold text-yellow-400`} id={tituloCorto}>{titulo}</h3>
-    <p class="text-gray-600 dark:text-gray-300" style="white-space: pre-line;">{conclusiones}</p>
-    <div>
-      {imagenes.map((imagen)=>(
-        <div class="relative flex flex-col items-center col-span-6 row-span-5 overflow-hidden rounded-xl shadow-xl">
-          
-          <img 
-          alt="Imagen Proyecto Jorge Badillo" 
-          class="w-full h-full object-cover" 
-          loading="lazy" 
-          src={imagen} 
-          />
-          
+  steamdata.map((item) => {
+    const data = item[lang]; // Accede a los datos en el idioma correcto
+    const tituloCorto = data.titulo.split(".")[0]; // Obtener la parte antes del primer "."
+    return (
+      <>
+        <h3 class={`text-xl font-bold text-yellow-400`} id={tituloCorto}>{data.titulo}</h3>
+        <p class="text-gray-600 dark:text-gray-300" style="white-space: pre-line;">{data.conclusiones}</p>
+        <div>
+          {data.imagenes.map((imagen) => (
+            <div class="relative flex flex-col items-center col-span-6 row-span-5 overflow-hidden rounded-xl shadow-xl">
+              <img 
+                alt="Imagen Proyecto Jorge Badillo" 
+                class="w-full h-full object-cover" 
+                loading="lazy" 
+                src={imagen} 
+              />
+            </div>
+          ))}
         </div>
-        ))
-      }
-    </div>
-    )
-  }
-  )
+      </>
+    );
+  })
 }

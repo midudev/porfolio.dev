@@ -1,53 +1,122 @@
 [
-    {
+  {
+    "es": {
       "titulo": "1.¿Cuál es el TOP10 de juegos más jugados?",
       "conclusiones": "Pudimos resolver esta pregunta desde dos ángulos diferentes: por cantidad de copias vendidas, por cantidad de horas jugadas.\nImportante. Para Steam una venta es una descarga.\n\nAunque la lista tiene títulos similares, destacando Dota 2 en ambos casos, tener diferentes perspectivas es bueno ya que hay varios títulos en la lista que son gratis. Es natural que los juegos gratis sean los más descargados, también suelen ser juegos sin una historia con final. Es decir, juegos sin límite de tiempo o rejugabilidad.\n\nPero también tenemos juegos no gratis, es impresionante que juegos con inicio y final compitan en estas listas.\nJuegos como Elder Scrolls es de los juegos con más horas juego y sin embargo, no de los más vendidos. Es decir, con una menor base de jugadores, cada jugador juega muchas horas.\n\nTambién tenemos a Portal 2, que siendo un juego corto, terminado en promedio en 8 horas, es uno de los juegos más vendidos de la historia. Nos habla de la viralidad y gran éxito que tuvo.",
-      "imagenes": ["projects/steam/1.0.webp","projects/steam/1.1.webp"]
+      "imagenes": ["/projects/steam/1.0.webp", "/projects/steam/1.1.webp"]
     },
-    {
+    "en": {
+      "titulo": "1. What is the TOP10 most played games?",
+      "conclusiones": "We were able to answer this question from two different angles: by the number of copies sold and by the number of hours played.\nImportant. For Steam, a sale is a download.\n\nAlthough the list has similar titles, with Dota 2 standing out in both cases, having different perspectives is good since there are several free titles on the list. It is natural that free games are the most downloaded, and they are usually games without an ending. That is, games with no time limit or replayability.\n\nBut we also have non-free games, and it is impressive that games with a beginning and an end compete on these lists.\nGames like Elder Scrolls are among the most played in terms of hours, yet they are not among the best-selling. This means that with a smaller player base, each player plays many hours.\n\nWe also have Portal 2, which, being a short game (completed in an average of 8 hours), is one of the best-selling games in history. It speaks to its virality and great success.",
+      "imagenes": ["/projects/steam/1.0.webp", "/projects/steam/1.1.webp"]
+    }
+  },
+  {
+    "es": {
       "titulo": "2.¿Cuál es el género de videojuegos más vendido?",
       "conclusiones": "Para esta pregunta podemos tener dos ópticas, los géneros más descargados y los géneros que más dinero venden.\nEs importante notar que un juego puede tener más de un género.\nEs importante hacer esta diferencia pues los juegos gratis (free to play) son el tercer género más popular pero no tienen un costo más allá de las compras dentro del mismo juego (skins, battlepass, etc.)\n\nObservamos que el género acción es el primer lugar indiscutible en popularidad y en ventas.\n\nTambién destacamos que hay géneros más nicho que no ocupan el mismo lugar en popularidad y en ventas. Este es el caso de los RPG, que están debajo de estrategia en popularidad pero por encima en facturación. Esto nos dice que suelen ser más caros aunque con una base de jugadores menor.",
-      "imagenes": ["projects/steam/2.0.webp","projects/steam/2.1.webp"]
+      "imagenes": ["/projects/steam/2.0.webp", "/projects/steam/2.1.webp"]
     },
-    {
+    "en": {
+      "titulo": "2. What is the best-selling video game genre?",
+      "conclusiones": "For this question, we can consider two perspectives: the most downloaded genres and the genres that generate the most revenue.\nIt is important to note that a game can belong to more than one genre.\nThis distinction is important because free-to-play games are the third most popular genre but do not have a cost beyond in-game purchases (skins, battle passes, etc.).\n\nWe observe that the action genre is the undisputed leader in both popularity and sales.\n\nWe also highlight that there are niche genres that do not occupy the same place in popularity and sales. This is the case for RPGs, which are below strategy in popularity but above in revenue. This tells us that they tend to be more expensive, even with a smaller player base.",
+      "imagenes": ["/projects/steam/2.0.webp", "/projects/steam/2.1.webp"]
+    }
+  },
+  {
+    "es": {
       "titulo": "3.¿Qué géneros tienen mejores reviews de media?",
       "conclusiones": "Podemos observar que todos los géneros tienen una cantidad parecida de reviews positivas, acercándonos vemos que el género RPG es ligeramente mejor reseñado respecto a los demás.\nDe igual manera, los géneros Simulation y Racing están ligeramente pero reseñados.\n\nComo complemento también me pareció importante estudiar la participación en cada género, es decir de su base de jugadores cuántos hacen una reseña positiva o negativa. Aquí vemos que el género RPG también es el género con mayor participación positiva.\n\nDestacamos que los juegos Free to Play son a los que menos dejan reviews en general.\n\nPor último, los juegos Simulation y RPG son en los que más dejan reviews. Es decir, los jugadores expresan más su opinión positiva o negativa.",
-      "imagenes": ["projects/steam/3.0.webp","projects/steam/3.1.webp", "projects/steam/3.2.webp", "projects/steam/3.3.webp"]
+      "imagenes": ["/projects/steam/3.0.webp", "/projects/steam/3.1.webp", "/projects/steam/3.2.webp", "/projects/steam/3.3.webp"]
     },
-    {
+    "en": {
+      "titulo": "3. Which genres have the best average reviews?",
+      "conclusiones": "We can observe that all genres have a similar number of positive reviews. Upon closer inspection, we see that the RPG genre is slightly better reviewed than the others.\nSimilarly, the Simulation and Racing genres are slightly worse reviewed.\n\nAs a complement, I also found it important to study participation in each genre, that is, how many players leave a positive or negative review. Here we see that the RPG genre also has the highest positive participation.\n\nWe highlight that Free-to-Play games are the ones that receive the fewest reviews in general.\n\nFinally, Simulation and RPG games are the ones that receive the most reviews. That is, players express their positive or negative opinions more frequently.",
+      "imagenes": ["/projects/steam/3.0.webp", "/projects/steam/3.1.webp", "/projects/steam/3.2.webp", "/projects/steam/3.3.webp"]
+    }
+  },
+  {
+    "es": {
       "titulo": "4.¿Cuánto ha ganado el desarrollador que más juegos ha vendido?",
       "conclusiones": "En esta pregunta podemos tomar en cuenta la cantidad de copias vendidas, siendo Valve con más de 400 millones de copias, representando una venta de casi 1.3 USD billones.\n\nLa otra perspectiva es cuánto ha ganado el desarrollador con más títulos, siendo Choice of games con 4.1 USD millones.\n\nAdemás, obtuvimos al desarrollador que más dinero ha ganado vendiendo títulos. Este es PUBG Coporation con 2 USD billones.\n\nEs muy interesante que PUBG Corporation solo tiene 1 título publicado, y así, es el ganador en dinero. Mientras que Choice of Games, siendo el desarrollador con la mayor cantidad de títulos no está ni cerca del dinero en ventas de Valve o PUBG Corporation. Poder conocer los costos de desarrollo nos permitiría acceder a la rentabilidad y al trabajo necesario que invierte cada uno de estos desarrolladores.\nHaciendo una investigación rápida, parece que los juegos de Choice of Games, son juegos sencillos, siempre con la misma mecánica. Tal vez, el trabajo invertido y la cantidad de personal es baja. Haciendo que la rentabilidad se divida en pocas manos.\n\nPor último, hacer notar que Valve es el desarrollador de Dota 2, el juego más descargado en nuestro data set. Dota 2 es un juego free to play, es decir, que gran parte de las copias vendidas que vemos de Valve no han generado dinero.",
-      "imagenes": ["projects/steam/4.0.webp"]
+      "imagenes": ["/projects/steam/4.0.webp"]
     },
-    {
+    "en": {
+      "titulo": "4. How much has the developer with the most game sales earned?",
+      "conclusiones": "For this question, we can consider the number of copies sold, with Valve having over 400 million copies, representing sales of nearly 1.3 billion USD.\n\nAnother perspective is how much the developer with the most titles has earned, with Choice of Games earning 4.1 million USD.\n\nAdditionally, we identified the developer that has earned the most money from selling titles. This is PUBG Corporation with 2 billion USD.\n\nIt is very interesting that PUBG Corporation has only 1 published title, yet it is the top earner. Meanwhile, Choice of Games, being the developer with the most titles, is nowhere near the sales revenue of Valve or PUBG Corporation. Knowing the development costs would allow us to understand the profitability and the necessary work invested by each of these developers.\nAfter a quick investigation, it seems that Choice of Games' titles are simple games, always with the same mechanics. Perhaps the invested work and the number of staff are low, resulting in profitability being divided among fewer people.\n\nFinally, it is worth noting that Valve is the developer of Dota 2, the most downloaded game in our dataset. Dota 2 is a free-to-play game, meaning that a large portion of the copies sold by Valve have not generated revenue.",
+      "imagenes": ["/projects/steam/4.0.webp"]
+    }
+  },
+  {
+    "es": {
       "titulo": "5.¿Cómo afecta a las reviews que un juego sea Early Access?",
       "conclusiones": "Los juegos Early Access tienen medias de reviews similares a los demás géneros.\n\nProfundizando más, analizamos la distribución de las reviews en este género. Observamos que su caja boxplot es la más amplia, es decir que entre el 25 y 75 percentil la distancia es grande, hay bastante varianza en las reviews de los juegos early access.\n\nRecordando que early access es un género más, me pareció interesante analizar el comportamiento de los demás géneros cuando están en early access. Destacamos las siguientes conclusiones:\nRacing y simulation son los únicos géneros que tienen mejor reviews de media los juegos en early access vs los que no.\n\nAl mismo tiempo los juegos free to play y simulation son los únicos dos géneros con mayor varianza en los juegos sin early access. Es decir menor varianza en los juegos con early access.\nEsto nos refiere a que en los juegos free to play con early access los jugadores están más de acuerdo en su calificación vs los que no tienen early access. Esto tiene sentido puesto que son juegos gratuitos, con muchos más jugadores que pueden probarlo sin gastar dinero.",
-      "imagenes": ["projects/steam/5.0.webp","projects/steam/5.1.webp", "projects/steam/5.2.webp"]
+      "imagenes": ["/projects/steam/5.0.webp", "/projects/steam/5.1.webp", "/projects/steam/5.2.webp"]
     },
-    {
+    "en": {
+      "titulo": "5. How does Early Access affect reviews?",
+      "conclusiones": "Early Access games have average reviews similar to other genres.\n\nDelving deeper, we analyzed the distribution of reviews in this genre. We observed that its boxplot is the widest, meaning that between the 25th and 75th percentiles, the distance is large, indicating significant variance in Early Access game reviews.\n\nRemembering that Early Access is just another genre, I found it interesting to analyze the behavior of other genres when they are in Early Access. We highlight the following conclusions:\nRacing and Simulation are the only genres where Early Access games have better average reviews than non-Early Access games.\n\nAt the same time, Free-to-Play and Simulation are the only two genres with higher variance in non-Early Access games. That is, lower variance in Early Access games.\nThis suggests that in Free-to-Play games with Early Access, players are more consistent in their ratings compared to those without Early Access. This makes sense since they are free games, with many more players who can try them without spending money.",
+      "imagenes": ["/projects/steam/5.0.webp", "/projects/steam/5.1.webp", "/projects/steam/5.2.webp"]
+    }
+  },
+  {
+    "es": {
       "titulo": "6.¿Cuál es el desarrollador (o desarrolladores) que más tipos de juego y cantidad ha desarrollado?",
       "conclusiones": "Los dos desarrolladores que más géneros han trabajado son Star Legion y Magicvalley Studio. Ambos tienen juegos en los 8 géneros disponibles.\nStar Legion ha desarrollado 6 juegos, con 5 de ellos con el género adventure.\nMagicvalley ha desarrollado 4 juegos, todos con los géneros action, adventure, racing, rpg y simulation.\n\nAlgo interesante es como estos desarrolladores no están ni cerca del desarrollador con la mayor cantidad de juegos, de hecho, se podría decir que tienen pocos juegos desarrollados, así han decidido que sus juegos sean catalogados con casi todos, o todos, los géneros.\n\nPara resolver esta pregunta fue importante considerar que los juegos pueden tener más de un género presente. Es por esto que contar los juegos desarrollados, no equivale a la cantidad de juegos en los géneros de un desarrollador.\n\nHaciendo una búsqueda rápida en internet podemos ver que Star Legion fue un desarrollador de indie games que tuvieron en general pocos jugadores.\nMientras que Magicvalley son juegos de realidad virtual con una base de jugadores pequeña también.",
-      "imagenes": ["projects/steam/6.0.webp"]
+      "imagenes": ["/projects/steam/6.0.webp"]
     },
-    {
+    "en": {
+      "titulo": "6. Which developer (or developers) has developed the most types and quantity of games?",
+      "conclusiones": "The two developers that have worked on the most genres are Star Legion and Magicvalley Studio. Both have games in all 8 available genres.\nStar Legion has developed 6 games, with 5 of them in the adventure genre.\nMagicvalley has developed 4 games, all with the genres action, adventure, racing, RPG, and simulation.\n\nSomething interesting is how these developers are nowhere near the developer with the most games. In fact, it could be said that they have developed few games, yet they have decided to categorize their games with almost all, or all, genres.\n\nTo answer this question, it was important to consider that games can belong to more than one genre. This is why counting the number of games developed does not equate to the number of games in a developer's genres.\n\nAfter a quick internet search, we can see that Star Legion was an indie game developer with generally few players.\nMeanwhile, Magicvalley's games are virtual reality titles with a small player base as well.",
+      "imagenes": ["/projects/steam/6.0.webp"]
+    }
+  },
+  {
+    "es": {
       "titulo": "7.¿En qué mes, desde que tenemos datos, se han publicado más juegos?",
       "conclusiones": "Agrupando los lanzamientos por mes podemos ver que Marzo es el mes en el que más juegos se han publicado. Es interesante notar la aparente temporalidad en los lanzamientos. Parece incrementar a inicio de año hasta Marzo y posteriormente decrecer hasta encontrar el punto más bajo para volver a subir hasta Octubre. Un análisis de series de tiempo podría ayudarnos a ver más fácilmente si existe una estacionalidad.\n\nPor último, agrupando por mes y año, notamos que el mes con mayores publicaciones ha sido Marzo del 2018, además los primeros 4 lugares pertenecen al año 2018. Nos podría hacer pensar que existe una tendencia incremental en la cantidad de juegos publicados por año.",
-      "imagenes": ["projects/steam/7.0.webp"]
+      "imagenes": ["/projects/steam/7.0.webp"]
     },
-    {
+    "en": {
+      "titulo": "7. In which month, since we have data, have the most games been published?",
+      "conclusiones": "Grouping releases by month, we can see that March is the month with the most games published. It is interesting to note the apparent seasonality in releases. It seems to increase at the beginning of the year until March and then decrease until reaching the lowest point, only to rise again until October. A time series analysis could help us more easily see if there is seasonality.\n\nFinally, grouping by month and year, we notice that the month with the most publications was March 2018, and the top 4 spots belong to the year 2018. This might suggest an increasing trend in the number of games published per year.",
+      "imagenes": ["/projects/steam/7.0.webp"]
+    }
+  },
+  {
+    "es": {
       "titulo": "8.¿Cuántas horas se juega de media a cada tipo de juego mensualmente?",
       "conclusiones": "Para resolver esta pregunta consideré las horas totales de juego, calculadas a partir de la cantidad de ventas * las horas jugadas promedio por jugador, en cada juego.\nDespués, calculé los meses que ha estado este juego desde su lanzamiento hasta nuestro último mes en los datos (Mayo 2019). Asumí que las horas de juego se han distribuido uniformemente en los meses publicados. Esta distribución es muy seguramente falsa pero no tenemos otra forma para conocer la popularidad y considera la antigüedad.\n\nFinalmente, agrupé los datos por género y calculé la media para cada uno.\n\nEl resultado muestra que los juegos Free to Play son los que más horas registran al mes.\nEsto podría explicarse por ser gratis.\nTambién puede explicarse por la rejugabilidad que ofrecen estos juegos al no tener una historia y tener títulos como Dota 2.",
-      "imagenes": ["projects/steam/8.0.webp"]
+      "imagenes": ["/projects/steam/8.0.webp"]
     },
-    {
+    "en": {
+      "titulo": "8. How many hours are played on average per game type monthly?",
+      "conclusiones": "To answer this question, I considered the total hours played, calculated from the number of sales * the average hours played per player, for each game.\nThen, I calculated the months the game has been available from its release until our last month in the data (May 2019). I assumed that the hours played have been evenly distributed across the published months. This distribution is most likely incorrect, but we have no other way to gauge popularity while considering the game's age.\n\nFinally, I grouped the data by genre and calculated the average for each.\n\nThe result shows that Free-to-Play games record the most hours per month.\nThis could be explained by them being free.\nIt could also be explained by the replayability these games offer, as they lack a story and include titles like Dota 2.",
+      "imagenes": ["/projects/steam/8.0.webp"]
+    }
+  },
+  {
+    "es": {
       "titulo": "9.¿Los juegos Free to Play tienen mejores o peores reviews?",
       "conclusiones": "Los juegos Free to Play tienen reviews similares a las de los demás géneros.",
-      "imagenes": ["projects/steam/9.0.webp"]
+      "imagenes": ["/projects/steam/9.0.webp"]
     },
-    {
+    "en": {
+      "titulo": "9. Do Free-to-Play games have better or worse reviews?",
+      "conclusiones": "Free-to-Play games have reviews similar to those of other genres.",
+      "imagenes": ["/projects/steam/9.0.webp"]
+    }
+  },
+  {
+    "es": {
       "titulo": "10.¿Cómo ha evolucionado el número de achievements (trofeos) por juego?",
       "conclusiones": "Calculé la suma de logros publicados por año y la cantidad de juegos publicados cada año.\n\nComo se observa en la gráfica la cantidad de juegos publicados había sido siempre mayor a la cantidad de logros, es decir había menos logros por juego.\nA partir del 2017 la cantidad de logros superó la cantidad de juegos, es decir, a cada juego le correspondería al menos un logro si se distribuyera uniformemente.\n\nLa tendencia parece apuntar a que la cantidad de logros seguirá creciendo, más no está claro si seguirá superando la cantidad de juegos publicados.",
-      "imagenes": ["projects/steam/10.0.webp"]
+      "imagenes": ["/projects/steam/10.0.webp"]
+    },
+    "en": {
+      "titulo": "10. How has the number of achievements (trophies) per game evolved?",
+      "conclusiones": "I calculated the sum of achievements published per year and the number of games published each year.\n\nAs seen in the graph, the number of games published had always been greater than the number of achievements, meaning there were fewer achievements per game.\nStarting in 2017, the number of achievements surpassed the number of games, meaning each game would have at least one achievement if distributed evenly.\n\nThe trend seems to indicate that the number of achievements will continue to grow, but it is unclear if it will continue to exceed the number of games published.",
+      "imagenes": ["/projects/steam/10.0.webp"]
     }
-  ]
-  
+  }
+]
