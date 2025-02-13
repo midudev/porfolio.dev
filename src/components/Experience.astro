@@ -1,40 +1,15 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro"
-const EXPERIENCE = [
-  {
-    date: "Dic. 2019 - Dic. 2024",
-    title: "Emprendedor",
-    company: "Guteté",
-    description:
-      "Ayudé a pequeñas y medianas empresas a tomar decisiones basadas en datos. He liderado equipos de hasta 8 profesionistas de diferentes áreas para crear soluciones integrales, trabajé mucho con e-commerce PHP, Python y SQL."
-  },
-  {
-    date: "Ago. 2019 - Ago. 2020",
-    title: "Auditor externo",
-    company: "Ernst & Young",
-    description:
-      "Colaboré en auditorías para garantizar la transparencia de grandes corporaciones. Desarrollé soluciones tecnológicas que mejoraron la seguridad operativa y optimizaron procesos clave, trabajé con R, VBA y Oracle ERP.",
-  },
-  {
-    date: "Ene. 2019 - Jul. 2019",
-    title: "Project Manager",
-    company: "Carbomex",
-    description:
-      "Lideré el desarrollo de software de análisis financiero para prever tendencias de mercado. Mi trabajo contribuyó al éxito de la valuación y venta de la empresa. Desarrollé habilidades de comunicación y trabajé con Tensorflow.",
-  },
-  {
-    date: "Ago. 2018 - Mar. 2019",
-    title: "Finance Intern",
-    company: "Provident",
-    description:
-      "Automaticé procesos de reporte financiero, ahorrando tiempo y recursos significativos. Diseñé modelos de proyección para mejorar la gestión de clientes en mora. Utilicé VBA y R.",
-  }
-]
+import ExperienceItem from "./ExperienceItem.astro";
+import { getLangFromUrl } from 'src/i18n/utils.ts';
+import experience from 'src/texts/experience.json';
+
+const lang = getLangFromUrl(Astro.url); // Obtén el idioma de la URL
+const content = experience[lang].experience; // Accede a las experiencias en el idioma correcto
 ---
 
 <ol class="relative mt-16">
   {
-    EXPERIENCE.map((experience) => (
+    content.items.map((experience) => (
       <li class="">
         <ExperienceItem {...experience} />
       </li>

@@ -1,5 +1,10 @@
 ---
-const currentYear = new Date().getFullYear()
+import { getLangFromUrl } from 'src/i18n/utils.ts';
+import footer from 'src/texts/footer.json';
+
+const lang = getLangFromUrl(Astro.url); // Obtén el idioma de la URL
+const content = footer[lang].footer; // Accede al contenido del footer en el idioma correcto
+const currentYear = new Date().getFullYear();
 ---
 
 <footer
@@ -8,22 +13,18 @@ const currentYear = new Date().getFullYear()
   <div
     class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4"
   >
-    <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
-      >© {currentYear}
-      <a href="https://linkedin.com/in/badillo-jorge/" class="hover:underline">Jorge Badillo</a>. Casi
-      todos los derechos reservados
-    </span>
-    <ul
-      class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
-    >
-      <li>
-        <a href="/#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mí</a>
-      </li>
-      <li>
-        <a id="contacto" href="mailto:badillo.delgado.jorge@gmail.com" class="hover:underline"
-          >Contacto</a
-        >
-      </li>
+    <span
+      class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
+      set:html={content.copyright.replace('{year}', currentYear)}
+    ></span>
+    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0">
+      {
+        content.links.map((link) => (
+          <li>
+            <a href={link.href} class="hover:underline me-4 md:me-6">{link.text}</a>
+          </li>
+        ))
+      }
     </ul>
   </div>
 </footer>

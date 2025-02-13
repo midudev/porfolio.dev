@@ -35,7 +35,7 @@ const lang = getLangFromUrl(Astro.url);
         <Briefcase class="size-8" />
         Profesional experience
       </TitleSection>
-      <Experience />
+      <Experience lang={lang}/>
     </SectionContainer>
 
     <SectionContainer id="proyectos">
@@ -43,7 +43,7 @@ const lang = getLangFromUrl(Astro.url);
         <CodeIcon class="size-7" />
         Projects
       </TitleSection>
-      <Projects />
+      <Projects lang={lang}/>
     </SectionContainer>
 
     <SectionContainer id="sobre-mi">
@@ -59,7 +59,7 @@ const lang = getLangFromUrl(Astro.url);
         <Grad class="size-8" />
         Education
       </TitleSection>
-      <Education />
+      <Education lang={lang}/>
     </SectionContainer>
   </div>
   </main>

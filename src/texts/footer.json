@@ -1,0 +1,32 @@
+{
+    "es": {
+      "footer": {
+        "copyright": "© {year} <a href='https://linkedin.com/in/badillo-jorge/' class='hover:underline'>Jorge Badillo</a>. Casi todos los derechos reservados",
+        "links": [
+          {
+            "text": "Sobre mí",
+            "href": "/#sobre-mi"
+          },
+          {
+            "text": "Contacto",
+            "href": "mailto:badillo.delgado.jorge@gmail.com"
+          }
+        ]
+      }
+    },
+    "en": {
+      "footer": {
+        "copyright": "© {year} <a href='https://linkedin.com/in/badillo-jorge/' class='hover:underline'>Jorge Badillo</a>. Almost all rights reserved",
+        "links": [
+          {
+            "text": "About me",
+            "href": "/#sobre-mi"
+          },
+          {
+            "text": "Contact",
+            "href": "mailto:badillo.delgado.jorge@gmail.com"
+          }
+        ]
+      }
+    }
+  }

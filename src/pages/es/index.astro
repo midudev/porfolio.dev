@@ -12,6 +12,11 @@ import Hero from "@/components/Hero.astro"
 import TitleSection from "@/components/TitleSection.astro"
 import Grad from "@/components/icons/Grad.astro"
 import Education from "@/components/Education.astro"
+
+import { getLangFromUrl } from 'src/i18n/utils.ts';
+
+const lang = getLangFromUrl(Astro.url);
+
 ---
 
 <Layout
@@ -30,7 +35,7 @@ import Education from "@/components/Education.astro"
         <Briefcase class="size-8" />
         Experiencia laboral
       </TitleSection>
-      <Experience />
+      <Experience lang={lang}/>
     </SectionContainer>
 
     <SectionContainer id="proyectos">
@@ -38,7 +43,7 @@ import Education from "@/components/Education.astro"
         <CodeIcon class="size-7" />
         Proyectos
       </TitleSection>
-      <Projects />
+      <Projects lang={lang}/>
     </SectionContainer>
 
     <SectionContainer id="sobre-mi">
@@ -46,7 +51,7 @@ import Education from "@/components/Education.astro"
         <ProfileCheck class="size-8" />
         Sobre mí
       </TitleSection>
-      <AboutMe />
+      <AboutMe lang={lang}/>
     </SectionContainer>
 
     <SectionContainer id="educacion">
@@ -54,7 +59,7 @@ import Education from "@/components/Education.astro"
         <Grad class="size-8" />
         Educación
       </TitleSection>
-      <Education />
+      <Education lang={lang}/>
     </SectionContainer>
   </div>
   </main>

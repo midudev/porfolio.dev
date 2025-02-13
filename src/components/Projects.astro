@@ -1,12 +1,17 @@
 ---
-import GitHub from "./icons/GitHub.astro"
-import JS from "./icons/JS.astro"
-import Python from "./icons/Python.astro"
-import MYSQL from "./icons/MYSQL.astro"
-import Pandas from "./icons/Pandas.astro"
-import PHP from "./icons/PHP.astro"
-import Link from "./icons/Link.astro"
-import LinkButton from "./LinkButton.astro"
+import GitHub from "./icons/GitHub.astro";
+import JS from "./icons/JS.astro";
+import Python from "./icons/Python.astro";
+import MYSQL from "./icons/MYSQL.astro";
+import Pandas from "./icons/Pandas.astro";
+import PHP from "./icons/PHP.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import { getLangFromUrl } from 'src/i18n/utils.ts';
+import projects from 'src/texts/projects.json';
+
+const lang = getLangFromUrl(Astro.url); // Obtén el idioma de la URL
+const content = projects[lang].projects; // Accede a los proyectos en el idioma correcto
 
 const TAGS = {
   JS: {
@@ -34,87 +39,62 @@ const TAGS = {
     class: "bg-[#003179] text-white",
     icon: PHP,
   },
-}
-const PROJECTS = [
-  {
-    title: "Estudio Steam",
-    description:
-      "Proyecto para un desarrollador de videojuegos para ayudarles a encontrar las tendencias de mercado en la plataforma Steam. Implementado con Python y Pandas, este proyecto ayudó a comprender mejor el comportamiento de los jugadores y las dinámicas del mercado.",
-    link: "/steam",
-    github: "https://github.com/Dexinator/steam",
-    image: "/projects/videogames.webp",
-    tags: [TAGS.PYTHON, TAGS.PANDAS],
-  },
-  {
-    title: "SISTEQ Control",
-    description:
-      "Fui Contratado para realizar un estudio de mercado para la importación de máquinas industriales, específicamente máquinas para desplazamientos de materiales a granel y polvos. Al estudiarse la viabilidad del proyecto se determinaron los precios competitivos y desarrollé el e-commerce.",
-    link: "https://sisteqcontrol.com",
-    image: "/projects/sisteq.webp",
-    tags: [TAGS.PYTHON, TAGS.PANDAS, TAGS.PHP],
-  },
-  {
-    title: "Clientes frecuentes Palacio Negro (Móvil)",
-    description:
-      "Desarrollo para registrar a los clientes del Palacio Negro, y alimentar el funnel de publicidad. Se desarrolló en servidor PHP, utilizando JS y CSS. El almacenamiento está en bases de datos MySQL.",
-    link: "https://presos.elpalacionegro.com",
-    github: "https://github.com/Dexinator/presos",
-    image: "/projects/presos.webp",
-    tags: [TAGS.JS, TAGS.MYSQL, TAGS.PHP],
-  },
-]
+};
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Imagen Proyecto Jorge Badillo" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-    </div>
-  </div>
+    content.items.map(({ image, title, description, tags, link, github }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt="Imagen Proyecto Jorge Badillo"
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${TAGS[tag].class} py-1 px-2`}
+                  >
+                    <TAGS[tag].icon class="size-4" />
+                    {TAGS[tag].name}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-              
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
-        </footer>
-    </div>
-  </div>
-</article>
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
     ))
   }
 </div>
-
-
-
