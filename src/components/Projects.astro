@@ -66,10 +66,10 @@ const TAGS = {
               {tags.map((tag) => (
                 <li>
                   <span
-                    class={`flex gap-x-2 rounded-full text-xs ${TAGS[tag].class} py-1 px-2`}
+                    class={`flex gap-x-2 rounded-full text-xs ${TAGS[tag as keyof typeof TAGS].class} py-1 px-2`}
                   >
-                    <TAGS[tag].icon class="size-4" />
-                    {TAGS[tag].name}
+                    <TAGS[tag as keyof typeof TAGS].icon class="size-4" />
+                    {TAGS[tag as keyof typeof TAGS].name}
                   </span>
                 </li>
               ))}
