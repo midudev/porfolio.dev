@@ -3,7 +3,9 @@ import "@fontsource-variable/onest"
 
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
+
 import { ViewTransitions } from "astro:transitions"
+import { getLangFromUrl } from '../i18n/utils';
 
 interface Props {
   title: string
@@ -11,11 +13,13 @@ interface Props {
 }
 
 const { description, title } = Astro.props
----
 
+const lang = getLangFromUrl(Astro.url);
+---
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
 <head>
+
   <meta charset="UTF-8" />
   <meta name="description" content={description} />
   <meta name="viewport" content="width=device-width" />
@@ -27,39 +31,13 @@ const { description, title } = Astro.props
 
 <body class="relative text-black dark:text-white">
   
-  
-  <script>
-    import ApexCharts from "apexcharts";
-   
-    document.addEventListener("DOMContentLoaded", () => {
-  console.log("Chart rendering script loaded!");
-  document.querySelectorAll(".chart-container").forEach((chartDiv) => {
-    console.log("Found chart container:", chartDiv);
-    const chartDataAttr = chartDiv.getAttribute("data-chart");
-    if (chartDataAttr) {
-      try {
-        const chartData = JSON.parse(chartDataAttr);
-        console.log("Chart data:", chartData);
-
-        const chart = new ApexCharts(chartDiv, chartData);
-        chart.render();
-      } catch (err) {
-        console.error("Error parsing chart data or rendering chart:", err);
-      }
-    } else {
-      console.warn("No data-chart attribute found on chart container.");
-    }
-  });
-});
-  </script>
-  
   <div
   class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
       bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
       dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
   >
 </div>
-<Header />
+<Header lang={lang}/>
 <slot />
 <Footer />
 <style is:global>

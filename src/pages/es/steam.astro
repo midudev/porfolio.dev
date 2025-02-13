@@ -1,0 +1,45 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import ProjectContent from "@/components/ProjectContent.astro"
+import ProjecTitle from "@/components/ProjecTitle.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import Steamproject from '@/components/project_steam.astro';
+const steam_info={
+  title: "Jupyter Notebook del Estudio Steam",
+  description: "Da clic aquí para ver con el jupyter notebook y ver otros pasos como la limpieza y manejo de datos. Está comentado para hacer más fácil su legibilidad paso a paso.",
+  src: "https://nbviewer.org/github/Dexinator/steam/blob/main/steam.ipynb"
+}
+---
+
+<Layout   title="Estudio Steam"
+
+description="Análisis de la librería de Steam por Jorge Badillo">
+<ProjectContent>
+      <ProjecTitle>Estudio Steam</ProjecTitle>
+      <SectionContainer>
+        <img src="videogames.webp"/>
+
+      </SectionContainer:>
+      <SectionContainer>
+      <p>Fui contratado por un estudio de videojuegos para analizar datos de la plataforma Steam, buscando información clave para su próximo desarrollo. Les ayudé a plantear las preguntas más relevantes y obtener conclusiones.</p>
+      <p>DISCLAIMER: Por motivos de protección de datos y cómo fue acordado con mi cliente, el dataset aquí presentado tiene como fecha límite MAYO 2019, 5 años menos a cuando fue realizado el estudio. Además, algunas conclusiones han sido recortadas o cambiadas del reporte final entregado. Estoy disponible para cualquier duda/aclaración :)</p>
+      <p>DISCLAIMER 2: Pasé los resultados a JSON para mapearlos, las imágenes aún no termino de extraerlas, gracias por su paciencia.</p>
+    </SectionContainer>
+      <SectionContainer>
+      <p>Este análisis tuvo como objetivo contestar las siguientes preguntas:</p>
+      <ol>
+        <li>1. ¿Cuál es el TOP10 de juegos más jugados?</li>
+        <li>2. ¿Cuál es el género de videojuegos más vendido?</li>
+        <li>3. ¿Qué géneros tienen mejores reviews de media?</li>
+        <li>4. ¿Cuánto ha ganado el desarrollador que más juegos ha vendido?</li>
+        <li>5. ¿Cómo afecta a las reviews que un juego sea Early Access?</li>
+        <li>6. ¿Cuál es el desarrollador (o desarrolladores) que más tipos de juego y cantidad ha desarrollado?</li>
+        <li>7. ¿En qué mes, desde que tenemos datos, se han publicado más juegos?</li>
+        <li>8. ¿Cuántas horas se juega de media a cada tipo de juego mensualmente?</li>
+        <li>9. ¿Los juegos Free to Play tienen mejores o peores reviews?</li>
+        <li>10. ¿Cómo ha evolucionado el número de achievements (trofeos) por juego?</li>
+      </ol>
+    </SectionContainer>
+    <Steamproject {...steam_info}/>
+</ProjectContent>
+</Layout>

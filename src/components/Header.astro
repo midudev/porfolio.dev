@@ -1,35 +1,46 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro"
 
+const { lang } = Astro.props as { lang: "es" | "en" };
+
 const navItems = [
   {
-    title: "Experiencia",
+    title: {es: "Experiencia",
+      en:"Experience"
+    },
     label: "experiencia",
     url: "/#experiencia",
   },
   {
-    title: "Proyectos",
+    title:{es: "Proyectos",
+      en:"Projects"
+    },
     label: "proyectos",
     url: "/#proyectos",
   },
   {
-    title: "Sobre mí",
+    title: {es: "Sobre mí",
+      en:"About me"
+    },
     label: "sobre-mi",
     url: "/#sobre-mi",
   },
   {
-    title: "Educación",
+    title: {es: "Educacion",
+      en:"Education"
+    },
     label: "educacion",
     url: "/#educacion",
   },
   {
-    title: "Contacto",
+    title: {es: "Contacto",
+      en:"Contact"
+    },
     label: "contacto",
     url: "mailto:badillo.delgado.jorge@gmail.com",
   },
 ]
 ---
-
 <header
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
@@ -45,7 +56,7 @@ const navItems = [
           aria-label={link.label}
           href={link.url}
         >
-          {link.title}
+          {link.title[lang]}
         </a>
       ))
     }

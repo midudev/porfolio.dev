@@ -1,5 +1,10 @@
 ---
-const personalImageAlt = "Miguel Ángel"
+import aboutme from "src/texts/aboutme.json"
+
+
+const personalImageAlt = "Jorge Badillo"
+const { lang } = Astro.props as { lang: 'en' | 'es' };
+console.log("JSON loaded:", aboutme);
 ---
 
 <article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
@@ -7,73 +12,43 @@ const personalImageAlt = "Miguel Ángel"
   class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
   >
   <p>
-    Me llamo Jorge y me encantan las matemáticas. Comencé a programar en Pascal a los 12 años, haciendo calculadoras de ecuaciones multivariables.
-    Actualmente, estoy especializado en <strong
-    >analizar datos</strong
-    > de problemas complejos<strong> planteando las preguntas correctas.
-    </strong>
+    {aboutme[lang].introduction.presentation}
+    <strong>{aboutme[lang].introduction.focus1}</strong>
+    {aboutme[lang].introduction.middle}
+    <strong>{aboutme[lang].introduction.focus2}</strong>
   </p>
   <p>
-  Algunos de mis éxitos incluyen:
+    {aboutme[lang].successes.title}
     <ul class="text-pretty [&_li_strong]:text-yellow-500 dark:[&_li_strong]:text-yellow-100 [&_li_strong]:font-normal [&_li_strong]:font-mono">
-      <li>Incrementar la recompra de <strong>Entrepeques 25%</strong> a través de encuestas digitales.</li>
-      <li>Desarrollar un CRM, actualmente con <strong>+300 clientes</strong>, para <strong>El Palacio Negro</strong>.</li>
-      <li>Automatizar en <strong>70%</strong> el área de reporting en <strong>Provident</strong> y crear un modelo de Forecast.</li>
+      <li>
+        {aboutme[lang].successes.item1.part1}
+        <strong>{aboutme[lang].successes.item1.strong1}</strong>
+        {aboutme[lang].successes.item1.part2}
+      </li>
+      <li>
+        {aboutme[lang].successes.item2.part1}
+        <strong>{aboutme[lang].successes.item2.strong1}</strong>
+        {aboutme[lang].successes.item2.part2}
+        <strong>{aboutme[lang].successes.item2.strong2}</strong>
+      </li>
+      <li>
+        {aboutme[lang].successes.item3.part1}
+        <strong>{aboutme[lang].successes.item3.strong1}</strong>
+        {aboutme[lang].successes.item3.part2}
+        <strong>{aboutme[lang].successes.item3.strong2}</strong>
+      </li>
     </ul>
   </p>
   <br>
   <p>
-    Como emprendedor, he trabajado con empresas pequeñas y medianas, construyendo <strong
-    >modelos de predicción y automatizando sus procesos de venta ecommerce</strong> 
-    , con lenguajes de programación como <strong><em class="italic">Python, PHP, VBA, R y SQL</em></strong
-      >. Mi objetivo es, implementar soluciones basadas en datos con la mejor tecnología disponible.
-    </p>
+    {aboutme[lang].entrepreneurship.part1}
+    <strong>{aboutme[lang].entrepreneurship.strong1}</strong>
+    {aboutme[lang].entrepreneurship.part2}
+    <strong><em class="italic">{aboutme[lang].entrepreneurship.strong2}</em></strong>
+    {aboutme[lang].entrepreneurship.part3}
+  </p>
   </div>
   
   <img width="200" height="200" src="/me.webp" alt={personalImageAlt} class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20 " style="object-position: 50% 50%">
   
 </article>
-
-<!-- FRASES PROHIBIDAS EN VUESTRO PORTFOLIO
-
-<p>
-Mi sueño es encontrar mi primer empleo en el mundo de la programación. Una empresa donde pueda seguir aprendiendo. ❌
-</p>
-
-<p>
-❌ Apasionado de la programación desde chekitito. Me encantan los ordenadores y crear páginas web buenas y rápidas con la última tecnología.
-</p>
-
-<p>
-Trabajo bien en equipo. Siempre estoy aprendiendo cosas nuevas.
-</p>
-
--------------------------------------
-
---------------------------------------
-
-<p>
-¡Soy Leo! Estudié Derecho Empresarial y, tras años ejerciendo, me pasé al mundo de la Programación. Desde entonces disfruto creando experiencias web para los usuarios.
-</p>
-
-<p>
-Entre mis éxitos destaco que durante el Grado Superior, ayudé a mis compañeros a aprender sobre TDD. Me encanta el testing, creo en su importancia, y me gusta compartir mi conocimiento sobre ello.
-</p>
-
-<p>
-Cuento con experiencia desarrollando aplicaciones móviles, y he creado una iniciativa llamada X para mezclar mis dos pasiones: la programación y el derecho. Ayudando a la sociedad a acceso a una defensa justa.
-</p>
-
----------------------------------------
-
-<p>Me llamo Sara, tengo 25 años y soy de Santiago, Chile 🇨🇱. Terminé mis estudios como Desarrolladora Web. Me encanta enfocarme en la parte del rendimiento, para ofrecer la mejora experiencia al usuario.</p>
-
-<p>
-Colaboro en la organización del MeetUp local BeerJS donde reunimos a desarrolladores de Santiago para compartir conocimiento y experiencias. El año 2023 hicimos un total de 25 charlas con más de 2000 asistentes.
-</p>
-
-<p>
-Además de participar activamente en la comunidad, he participado en la Hackathon de Midudev quedando en 3er puesto con mi proyecto _Chatty_, donde usando IA podías interactuar con un PDF. ¡Échale un vistazo!
-</p>
-
--->
