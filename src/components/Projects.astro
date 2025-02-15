@@ -5,6 +5,7 @@ import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 import AstroIcon from "./icons/AstroIcon.astro"
+import ExpoIcon from "./icons/ExpoIcon.astro"
 
 const TAGS = {
   NEXT: {
@@ -22,13 +23,18 @@ const TAGS = {
     class: "bg-[#003159] ",
     icon: AstroIcon,
   },
+  REACTNATIVE: {
+    name: "Expo & React Native",
+    class: "bg-emerald-700 text-white",
+    icon: ExpoIcon,
+  },
 }
 const PROJECTS = [
   {
     title: "WORK IN PROGRESS - ORION POS",
     description:
       "This project is currently a WIP and will be released soon. It's a POS system for small businesses. It's built with Next.js.",
-    link: "https://davidburgos.vercel.app/",
+    link: "https://orion-generic-pos.vercel.app/register",
     github: "https://github.com/DavidBurgos7/orion-generic-pos-react",
     image: "/projects/orionpos.webp",
     tags: [TAGS.NEXT, TAGS.TAILWIND],
@@ -37,9 +43,9 @@ const PROJECTS = [
     title: "WORK IN PROGRESS - ORION QR Code generator & Reader.",
     description:
       "This is currently a WIP and will be released soon. It's a QR code generator and reader. It's built with ReactNative with Expo.",
-    link: "",
-    image: "/projects/davidb.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    github: "https://github.com/DavidBurgos7/orion-qr-code-scan",
+    image: "/projects/orionqrcode.gif",
+    tags: [TAGS.REACTNATIVE],
   },
 ]
 ---
