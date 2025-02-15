@@ -6,6 +6,7 @@ import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 import AstroIcon from "./icons/AstroIcon.astro"
 import ExpoIcon from "./icons/ExpoIcon.astro"
+import IonicIcon from "./icons/IonicIcon.astro"
 
 const TAGS = {
   NEXT: {
@@ -28,6 +29,11 @@ const TAGS = {
     class: "bg-emerald-700 text-white",
     icon: ExpoIcon,
   },
+  IONIC: {
+    name: "Ionic Angular",
+    class: "bg-red-700 text-white",
+    icon: IonicIcon,
+  },
 }
 const PROJECTS = [
   {
@@ -47,6 +53,13 @@ const PROJECTS = [
     image: "/projects/orionqrcode.gif",
     tags: [TAGS.REACTNATIVE],
   },
+  {
+    title: "KlickTrack - POS + Compliance Translator | Client Work",
+    description: "KlickTrack is a powerful retail cannabis point of sale and business intelligence tool. Bringing cannabis retailers much-needed flexibility allowing them to break away from the register and take their sales force to the floor opening up endless avenues to streamline your shop.",
+    link: "https://apps.apple.com/us/app/klicktrack/id1317621600?l=es",
+    image: "/projects/klicktrack.webp",
+    tags: [TAGS.IONIC],
+  }
 ]
 ---
 
