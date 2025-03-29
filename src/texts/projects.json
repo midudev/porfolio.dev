@@ -4,6 +4,14 @@
         "title": "Proyectos",
         "items": [
           {
+            "title": "Portafolio Julia Sánchez",
+            "description": "Desarrollo de un portafolio profesional para una coach y emprendedora. El sitio está construido con tecnologías modernas y presenta su trayectoria profesional, servicios y proyectos de manera elegante y profesional.",
+            "link": "https://dex-js.vercel.app/",
+            "github": "https://github.com/Dexinator/dex-js",
+            "image": "/projects/julia.webp",
+            "tags": ["ICASTRO", "TAILWIND", "DOCKER"]
+          },
+          {
             "title": "Estudio Steam",
             "description": "Proyecto para un desarrollador de videojuegos para ayudarles a encontrar las tendencias de mercado en la plataforma Steam. Implementado con Python y Pandas, este proyecto ayudó a comprender mejor el comportamiento de los jugadores y las dinámicas del mercado.",
             "link": "/es/steam",
@@ -33,6 +41,14 @@
       "projects": {
         "title": "Projects",
         "items": [
+          {
+            "title": "Julia Sánchez Portfolio",
+            "description": "Development of a professional portfolio for a coach and entrepreneur. The site is built with modern technologies and presents her professional journey, services, and projects in an elegant and professional manner.",
+            "link": "https://dex-js.vercel.app/",
+            "github": "https://github.com/Dexinator/DexJS",
+            "image": "/projects/julia.webp",
+            "tags": ["ICASTRO", "TAILWIND", "DOCKER"]
+          },
           {
             "title": "Steam Study",
             "description": "Project for a game developer to help them identify market trends on the Steam platform. Implemented with Python and Pandas, this project helped better understand player behavior and market dynamics.",

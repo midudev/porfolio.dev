@@ -6,6 +6,9 @@ import MYSQL from "./icons/MYSQL.astro";
 import Pandas from "./icons/Pandas.astro";
 import PHP from "./icons/PHP.astro";
 import Link from "./icons/Link.astro";
+import Icastro from "./icons/Icastro.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Docker from "./icons/Docker.astro";
 import LinkButton from "./LinkButton.astro";
 import { getLangFromUrl } from 'src/i18n/utils.ts';
 import projects from 'src/texts/projects.json';
@@ -39,6 +42,21 @@ const TAGS = {
     class: "bg-[#003179] text-white",
     icon: PHP,
   },
+  ICASTRO: {
+    name: "Astro",
+    class: "bg-[#FF5D01] text-white",
+    icon: Icastro,
+  },
+  TAILWIND: {
+    name: "Tailwind",
+    class: "bg-[#38BDF8] text-white",
+    icon: Tailwind,
+  },
+  DOCKER: {
+    name: "Docker",
+    class: "bg-[#2496ED] text-white",
+    icon: Docker,
+  },
 };
 ---
 
@@ -64,14 +82,14 @@ const TAGS = {
         <div class="flex flex-wrap mt-2">
           <ul class="flex flex-row mb-2 gap-x-2">
             {tags.map((tag) => {
-              const tagKey = tag as keyof typeof TAGS; // Type assertion
-              const IconComponent = TAGS[tagKey].icon; // Get the icon component
+              const tagKey = tag as keyof typeof TAGS;
+              const IconComponent = TAGS[tagKey].icon;
               return (
               <li>
                 <span
                 class={`flex gap-x-2 rounded-full text-xs ${TAGS[tagKey].class} py-1 px-2`}
                 >
-                <IconComponent class="size-4" /> {/* Render the icon component */}
+                <IconComponent class="size-4" />
                 {TAGS[tagKey].name}
               </span>
             </li>
