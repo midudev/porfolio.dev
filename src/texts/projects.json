@@ -5,7 +5,7 @@
         "items": [
           {
             "title": "Portafolio Julia Sánchez",
-            "description": "Desarrollo de un portafolio profesional para una coach y emprendedora. El sitio está construido con tecnologías modernas y presenta su trayectoria profesional, servicios y proyectos de manera elegante y profesional.",
+            "description": "Desarrollo de portafolio profesional para una coach y emprendedora. El sitio está construido con tecnologías modernas y presenta su trayectoria profesional, servicios y proyectos de manera elegante y profesional.",
             "link": "https://dex-js.vercel.app/",
             "github": "https://github.com/Dexinator/dex-js",
             "image": "/projects/julia.webp",
