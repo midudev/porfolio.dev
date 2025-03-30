@@ -1,15 +1,15 @@
 ---
-import LinkInline from "./LinkInline.astro"
+import LinkInline from "./LinkInline.astro";
 
 interface Props {
-  title: string
-  company: string
-  description: string
-  link?: string
-  date: string
+  title: string;
+  company: string;
+  description: string;
+  link?: string;
+  date: string;
 }
 
-const { title, company, description, link, date } = Astro.props
+const { title, company, description, link, date } = Astro.props;
 ---
 
 <div
@@ -44,10 +44,8 @@ const { title, company, description, link, date } = Astro.props
             stroke-linecap="round"
             stroke-linejoin="round"
           >
-            <>
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M9 6l6 6l-6 6" />
-            </>
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M9 6l6 6l-6 6" />
           </svg>
         </LinkInline>
       )

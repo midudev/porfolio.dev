@@ -1,0 +1,38 @@
+{
+    "es": {
+      "hero": {
+        "personalImageAlt": "Miguel Ángel",
+        "badge": "Disponible para trabajar",
+        "title": "Jorge Badillo",
+        "description": "5 años de experiencia.<br> <strong>Lic. en Actuaría y Científico de Datos</strong> de CDMX, México 🇲🇽. Especializado en análisis de datos, automatización de procesos y gestión de proyectos técnicos.",
+        "contact": {
+          "email": {
+            "text": "Contáctame",
+            "href": "mailto:badillo.delgado.jorge@gmail.com"
+          },
+          "linkedin": {
+            "text": "LinkedIn",
+            "href": "https://linkedin.com/in/badillo-jorge/"
+          }
+        }
+      }
+    },
+    "en": {
+      "hero": {
+        "personalImageAlt": "Miguel Ángel",
+        "badge": "Available for work",
+        "title": "Jorge Badillo",
+        "description": "5 years of experience.<br> <strong>Bachelor's in Actuarial Science and Data Scientist</strong> from Mexico City, Mexico 🇲🇽. Specialized in data analysis, process automation, and technical project management.",
+        "contact": {
+          "email": {
+            "text": "Contact me",
+            "href": "mailto:badillo.delgado.jorge@gmail.com"
+          },
+          "linkedin": {
+            "text": "LinkedIn",
+            "href": "https://linkedin.com/in/badillo-jorge/"
+          }
+        }
+      }
+    }
+  }

@@ -1,30 +1,67 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro"
 
+const { lang } = Astro.props as { lang: "es" | "en" };
+
 const navItems = [
   {
-    title: "Experiencia",
+    title: {
+      es: "Experiencia",
+      en: "Experience"
+    },
     label: "experiencia",
-    url: "/#experiencia",
+    url: {
+      es: "/es#experiencia",
+      en: "/en#experiencia"
+    }
   },
   {
-    title: "Proyectos",
+    title: {
+      es: "Proyectos",
+      en: "Projects"
+    },
     label: "proyectos",
-    url: "/#proyectos",
+    url: {
+      es: "/es#proyectos",
+      en: "/en#proyectos"
+    }
   },
   {
-    title: "Sobre mí",
+    title: {
+      es: "Sobre mí",
+      en: "About me"
+    },
     label: "sobre-mi",
-    url: "/#sobre-mi",
+    url: {
+      es: "/es#sobre-mi",
+      en: "/en#sobre-mi"
+    }
   },
   {
-    title: "Contacto",
+    title: {
+      es: "Educación",
+      en: "Education"
+    },
+    label: "educacion",
+    url: {
+      es: "/es#educacion",
+      en: "/en#educacion"
+    }
+  },
+  {
+    title: {
+      es: "Contacto",
+      en: "Contact"
+    },
     label: "contacto",
-    url: "mailto:miduga@gmail.com",
+    url: {
+      es: "mailto:badillo.delgado.jorge@gmail.com",
+      en: "mailto:badillo.delgado.jorge@gmail.com"
+    }// No necesita traducción
   },
 ]
----
 
+---
 <header
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
@@ -34,11 +71,13 @@ const navItems = [
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500"
+        class={`relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500 ${
+            link.label === "contacto" ? "hidden md:block" : ""
+          }`}
           aria-label={link.label}
-          href={link.url}
+          href={link.url[lang]}
         >
-          {link.title}
+          {link.title[lang]}
         </a>
       ))
     }

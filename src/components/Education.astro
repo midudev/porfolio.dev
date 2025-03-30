@@ -1,0 +1,30 @@
+---
+import { getLangFromUrl } from 'src/i18n/utils.ts';
+import education from 'src/texts/education.json';
+
+const lang = getLangFromUrl(Astro.url); // Obtén el idioma de la URL
+const content = education[lang].education; // Accede a la educación en el idioma correcto
+---
+
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+  {
+    content.institutions.map((institution) => (
+      <div class="flex flex-col items-start gap-4">
+        <img
+          src={institution.image}
+          alt={institution.name}
+          class="w-16 h-16 object-contain"
+        />
+        <h3 class="text-xl font-bold text-yellow-400">{institution.name}</h3>
+        <h4 class="font-semibold text-xl text-gray-600 dark:text-white">{institution.degree}</h4>
+        <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">{institution.grade}</time>
+        <p class="text-gray-600 dark:text-gray-300">{institution.description}</p>
+      </div>
+    ))
+  }
+</section>
+
+<section class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 w-full mt-10">
+  <h2 class="text-xl font-bold text-yellow-400 mb-4">{content.certifications.title}</h2>
+  <p class="text-gray-600 dark:text-gray-300 leading-relaxed" set:html={content.certifications.description}></p>
+</section>

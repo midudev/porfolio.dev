@@ -1,0 +1,19 @@
+# Dependencias
+node_modules
+.pnpm-store
+
+# Archivos de construcción
+dist
+.output
+
+# Archivos de desarrollo
+.git
+.gitignore
+.env
+.env.*
+.vscode
+*.log
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db 

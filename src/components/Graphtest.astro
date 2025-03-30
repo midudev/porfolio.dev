@@ -1,0 +1,27 @@
+
+
+<div id="test-chart"></div>
+
+<script>
+    import ApexCharts from "apexcharts";
+  document.addEventListener("DOMContentLoaded", () => {
+    const options = {
+      chart: {
+        type: "bar",
+        height: 350,
+      },
+      series: [
+        {
+          name: "Example Series",
+          data: [10, 20, 15, 30],
+        },
+      ],
+      xaxis: {
+        categories: ["A", "B", "C", "D"],
+      },
+    };
+
+    const chart = new ApexCharts(document.getElementById("test-chart"), options);
+    chart.render();
+  });
+</script>

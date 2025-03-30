@@ -1,0 +1,72 @@
+{
+    "es": {
+      "introduction": {
+        "presentation": "Me llamo Jorge y me encantan las matemáticas. Comencé a programar en Pascal a los 12 años, haciendo calculadoras de ecuaciones multivariables. Actualmente, estoy especializado en ",
+        "focus1": "analizar datos ",
+        "middle": " de problemas complejos",
+        "focus2": " planteando las preguntas correctas."
+      },
+      "successes": {
+        "title": "Algunos de mis éxitos incluyen:",
+        "item1": {
+          "part1": "Incrementar la recompra de ",
+          "strong1": "Entrepeques en un 25%",
+          "part2": " a través de encuestas digitales."
+        },
+        "item2": {
+          "part1": "Desarrollar un CRM, actualmente con ",
+          "strong1": "+300 clientes",
+          "part2": ", para ",
+          "strong2": "El Palacio Negro"
+        },
+        "item3": {
+          "part1": "Automatizar en ",
+          "strong1": "70%",
+          "part2": " el área de reporting en ",
+          "strong2": "Provident"
+        }
+      },
+      "entrepreneurship": {
+        "part1": "Como emprendedor, he trabajado con empresas pequeñas y medianas, construyendo ",
+        "strong1": "modelos de predicción y automatizando sus procesos de venta ecommerce",
+        "part2": ", con lenguajes de programación como ",
+        "strong2": "Python, PHP, VBA, R y SQL.",
+        "part3": "Mi objetivo es implementar soluciones basadas en datos con la mejor tecnología disponible."
+      }
+    },
+    "en": {
+      "introduction": {
+        "presentation": "My name is Jorge, and I am passionate about mathematics. I started programming in Pascal at the age of 12, creating multivariable equation calculators. Currently, I specialize in ",
+        "focus1": "analyzing data ",
+        "middle": " from complex problems",
+        "focus2": " by asking the right questions."
+      },
+      "successes": {
+        "title": "Some of my achievements include:",
+        "item1": {
+          "part1": "Increasing repurchase rates for ",
+          "strong1": "Entrepeques by 25%",
+          "part2": " through digital surveys."
+        },
+        "item2": {
+          "part1": "Developing a CRM, currently with ",
+          "strong1": "+300 clients",
+          "part2": ", for ",
+          "strong2": "El Palacio Negro"
+        },
+        "item3": {
+          "part1": "Automating ",
+          "strong1": "70%",
+          "part2": " of the reporting area at ",
+          "strong2": "Provident"
+        }
+      },
+      "entrepreneurship": {
+        "part1": "As an entrepreneur, I have worked with small and medium-sized businesses, building ",
+        "strong1": "prediction models and automating their ecommerce sales processes",
+        "part2": ", using programming languages such as ",
+        "strong2": "Python, PHP, VBA, R, and SQL.",
+        "part3": "My goal is to implement data-driven solutions using the best available technology."
+      }
+    }
+  }

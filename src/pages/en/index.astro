@@ -1,0 +1,70 @@
+---
+import Layout from "@/layouts/Layout.astro"
+
+import AboutMe from "@/components/AboutMe.astro"
+import Briefcase from "@/components/icons/Briefcase.astro"
+import CodeIcon from "@/components/icons/Code.astro"
+import Experience from "@/components/Experience.astro"
+import ProfileCheck from "@/components/icons/ProfileCheck.astro"
+import Projects from "@/components/Projects.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import Hero from "@/components/Hero.astro"
+import TitleSection from "@/components/TitleSection.astro"
+import Grad from "@/components/icons/Grad.astro"
+import Education from "@/components/Education.astro"
+import LanguagePicker from "@/components/LanguagePicker.astro"
+
+import { getLangFromUrl } from 'src/i18n/utils.ts';
+
+const lang = getLangFromUrl(Astro.url);
+
+
+---
+
+<Layout
+  title="Portafolio de Jorge Badillo"
+  description="Hola!, este es mi portafolio, soy un actuario especializado en Data Science y programación web."
+>
+  <main class="px-4">
+    <SectionContainer class="py-16 md:py-36">
+      <LanguagePicker/>
+      <Hero>
+      </slot>
+    </Hero>
+    </SectionContainer>
+    <div class="space-y-24">
+    <SectionContainer id="experiencia">
+      <TitleSection>
+        <Briefcase class="size-8" />
+        Profesional experience
+      </TitleSection>
+      <Experience lang={lang}/>
+    </SectionContainer>
+
+    <SectionContainer id="proyectos">
+      <TitleSection>
+        <CodeIcon class="size-7" />
+        Projects
+      </TitleSection>
+      <Projects lang={lang}/>
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi">
+      <TitleSection>
+        <ProfileCheck class="size-8" />
+        About me
+      </TitleSection>
+      <AboutMe lang={lang}/>
+    </SectionContainer>
+
+    <SectionContainer id="educacion">
+      <TitleSection>
+        <Grad class="size-8" />
+        Education
+      </TitleSection>
+      <Education lang={lang}/>
+    </SectionContainer>
+  </div>
+  </main>
+
+</Layout>

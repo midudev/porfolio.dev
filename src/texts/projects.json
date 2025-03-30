@@ -1,0 +1,78 @@
+{
+    "es": {
+      "projects": {
+        "title": "Proyectos",
+        "items": [
+          {
+            "title": "Portafolio Julia Sánchez",
+            "description": "Desarrollo de portafolio profesional para una coach y emprendedora. El sitio está construido con tecnologías modernas y presenta su trayectoria profesional, servicios y proyectos de manera elegante y profesional.",
+            "link": "https://dex-js.vercel.app/",
+            "github": "https://github.com/Dexinator/dex-js",
+            "image": "/projects/julia.webp",
+            "tags": ["ICASTRO", "TAILWIND", "DOCKER"]
+          },
+          {
+            "title": "Estudio Steam",
+            "description": "Proyecto para un desarrollador de videojuegos para ayudarles a encontrar las tendencias de mercado en la plataforma Steam. Implementado con Python y Pandas, este proyecto ayudó a comprender mejor el comportamiento de los jugadores y las dinámicas del mercado.",
+            "link": "/es/steam",
+            "github": "https://github.com/Dexinator/steam",
+            "image": "/projects/videogames.webp",
+            "tags": ["PYTHON", "PANDAS"]
+          },
+          {
+            "title": "SISTEQ Control",
+            "description": "Fui contratado para realizar un estudio de mercado para la importación de máquinas industriales, específicamente máquinas para desplazamientos de materiales a granel y polvos. Al estudiarse la viabilidad del proyecto se determinaron los precios competitivos y desarrollé el e-commerce.",
+            "link": "https://sisteqcontrol.com",
+            "image": "/projects/sisteq.webp",
+            "tags": ["PYTHON", "PANDAS", "PHP"]
+          },
+          {
+            "title": "Clientes frecuentes Palacio Negro (Móvil)",
+            "description": "Desarrollo para registrar a los clientes del Palacio Negro, y alimentar el funnel de publicidad. Se desarrolló en servidor PHP, utilizando JS y CSS. El almacenamiento está en bases de datos MySQL.",
+            "link": "https://presos.elpalacionegro.com",
+            "github": "https://github.com/Dexinator/presos",
+            "image": "/projects/presos.webp",
+            "tags": ["JS", "MYSQL", "PHP"]
+          }
+        ]
+      }
+    },
+    "en": {
+      "projects": {
+        "title": "Projects",
+        "items": [
+          {
+            "title": "Julia Sánchez Portfolio",
+            "description": "Development of a professional portfolio for a coach and entrepreneur. The site is built with modern technologies and presents her professional journey, services, and projects in an elegant and professional manner.",
+            "link": "https://dex-js.vercel.app/",
+            "github": "https://github.com/Dexinator/DexJS",
+            "image": "/projects/julia.webp",
+            "tags": ["ICASTRO", "TAILWIND", "DOCKER"]
+          },
+          {
+            "title": "Steam Study",
+            "description": "Project for a game developer to help them identify market trends on the Steam platform. Implemented with Python and Pandas, this project helped better understand player behavior and market dynamics.",
+            "link": "/en/steam",
+            "github": "https://github.com/Dexinator/steam",
+            "image": "/projects/videogames.webp",
+            "tags": ["PYTHON", "PANDAS"]
+          },
+          {
+            "title": "SISTEQ Control",
+            "description": "I was hired to conduct a market study for the import of industrial machines, specifically machines for bulk and powder material handling. After studying the project's feasibility, competitive prices were determined, and I developed the e-commerce platform.",
+            "link": "https://sisteqcontrol.com",
+            "image": "/projects/sisteq.webp",
+            "tags": ["PYTHON", "PANDAS", "PHP"]
+          },
+          {
+            "title": "Frequent Customers Palacio Negro (Mobile)",
+            "description": "Development to register Palacio Negro's customers and feed the advertising funnel. Developed on a PHP server, using JS and CSS. Storage is in MySQL databases.",
+            "link": "https://presos.elpalacionegro.com",
+            "github": "https://github.com/Dexinator/presos",
+            "image": "/projects/presos.webp",
+            "tags": ["JS", "MYSQL", "PHP"]
+          }
+        ]
+      }
+    }
+  }
