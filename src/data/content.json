@@ -1,0 +1,56 @@
+{
+  "aboutMe": {
+    "personalImageAlt": "Miguel Ángel",
+    "paragraphs": [
+      "Me llamo Miguel Ángel pero mis amigos me llaman midu. Empecé en la programación con un Amstrad, tenía 10 años. Actualmente estoy <strong>liderando equipos de desarrollo en multinacionales</strong>.",
+      "Algunos de mis éxitos incluyen <strong>colaborar con Mozilla para el desarrollo de las primeras apps en su sistema FirefoxOS</strong>. Aunque hoy está desaparecido fue un gran avance en el mundo del desarrollo web.",
+      "Como creador de contenido, <strong>cuento con el canal de habla hispana más visto del mundo en la categoría de <em>Software & Game Development</em> en Twitch</strong>. Mi objetivo es mejorar la empleabilidad de la comunidad hispana y el acceso a contenido de calidad."
+    ]
+  },
+  "experience": [
+    {
+      "date": "Actualmente...",
+      "title": "Creador de Contenido",
+      "company": "Twitch",
+      "description": "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
+      "link": "https://twitch.tv/midudev"
+    },
+    {
+      "date": "Septiembre 2022",
+      "title": "Principal Frontend Engineer",
+      "company": "Adevinta Spain",
+      "description": "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos."
+    }
+  ],
+  "projects": {
+    "tags": {
+      "NEXT": {
+        "name": "Next.js",
+        "class": "bg-black text-white",
+        "icon": "NextJS"
+      },
+      "TAILWIND": {
+        "name": "Tailwind CSS",
+        "class": "bg-[#003159] text-white",
+        "icon": "Tailwind"
+      }
+    },
+    "items": [
+      {
+        "title": "SVGL - A beautiful library with SVG logos",
+        "description": "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
+        "link": "https://svgl.vercel.app/",
+        "github": "https://github.com/pheralb/svgl",
+        "image": "/projects/svgl.webp",
+        "tags": ["NEXT", "TAILWIND"]
+      },
+      {
+        "title": "AdventJS - Retos de programación con JavaScript y TypeScript",
+        "description": "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
+        "link": "https://adventjs.dev",
+        "image": "/projects/adventjs.webp",
+        "tags": ["NEXT", "TAILWIND"]
+      }
+    ]
+  }
+}
