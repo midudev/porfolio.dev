@@ -4,6 +4,14 @@ import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import Spring from "./icons/Spring.astro"
+import Bootstrap from "./icons/Bootstrap.astro"
+import Java from "./icons/Java.astro"
+import Dotnet from "./icons/Dotnet.astro"
+import Csharp from "./icons/Cscharp.astro"
+import EF from "./icons/EF.astro"
+import MySql from "./icons/MySql.astro"
+import Sqlserver from "./icons/Sqlserver.astro"
 
 const TAGS = {
   NEXT: {
@@ -16,24 +24,73 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  SPRING: {
+    name: "Spring Boot",
+    class: "bg-green-500 text-white",
+    icon: Spring,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-purple-500 text-white",
+    icon: Bootstrap,
+  },
+  JAVA: {
+    name: "Java",
+    class: "bg-white text-black",
+    icon: Java,
+  },
+  DOTNET: {
+    name: "Dotnet 8",
+    class: "bg-white text-black",
+    icon: Dotnet,
+  },
+  CSHARP: {
+    name: "CSharp",
+    class: "bg-purple-500 text-white",
+    icon: Csharp,
+  },
+  EF: {
+    name: "EF Core",
+    class: "bg-white text-black",
+    icon: EF,
+  },
+  MYSQL: {
+    name: 'My<span class="text-yellow-400">SQL</span>',
+    class: "bg-white text-blue-500",
+    icon: MySql,
+  },
+  SQLSERVER: {
+    name: `
+      <span class="flex flex-col items-center leading-none">
+        <span class="text-[8px] text-gray-500 font-semibold flex items-center gap-0.5">
+          Microsoft
+          <span class="text-[6px] align-super">®</span>
+        </span>
+        <span>SQLServer</span>
+      </span>
+    `,
+    class: "bg-white text-black",
+    icon: Sqlserver,
+  },
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Sistema de registro y autenticación de clientes con SpringBoot y Thymeleaf",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Aplicación web para la gestión y registro de clientes desarrollada desde cero con SpringBoot 3.x, JDK 17+, Thymeleaf y Bootstrap 5.",
+    link: "https://www.linkedin.com/in/geraldcaris/",
+    github: "https://github.com/mcarisc/registroClientes",
+    image: "/projects/appclisbtm.webp",
+    tags: [TAGS.JAVA, TAGS.SPRING, TAGS.BOOTSTRAP, TAGS.MYSQL],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "FinanceApi RestFul con NET 8 y C#",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "API RestFul para la gestión de finanzas personales desarrollada desde cero con .NET 8, C# y Entity Framework Core.",
+    link: "https://www.linkedin.com/in/geraldcaris/",
+    github: "https://github.com/mcarisc/FinanceApi",
+    image: "/projects/financeapi.webp",
+    tags: [TAGS.DOTNET, TAGS.CSHARP, TAGS.EF, TAGS.SQLSERVER],
   },
 ]
 ---
@@ -60,7 +117,7 @@ const PROJECTS = [
                 class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
               >
                 <tag.icon class="size-4" />
-                {tag.name}
+                <span set:html={tag.name} />
               </span>
             </li>
           ))}
