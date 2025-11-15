@@ -89,22 +89,44 @@ const navItems = [
 </script>
 
 <style>
-  nav {
-    animation: nav-shadown 1s linear both;
+nav {
+    animation: nav-shadow 1s linear both;
     animation-timeline: scroll();
     animation-range: 0 100px;
+
+    background-color: rgba(79, 79, 79, 0.32); 
   }
 
-  nav {
-    @apply dark:bg-gray-800/90 bg-white/50;
-  }
 
-  @keyframes nav-shadown {
+  @keyframes nav-shadow {
     0% {
-      @apply dark:bg-gray-800/0 bg-white/0;
+      background-color: rgba(255, 255, 255, 0);
     }
-    to {
-      @apply shadow-lg ring-1 backdrop-blur ring-white/10;
+
+    100% {
+      box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    @keyframes nav-shadow {
+      0% {
+        background-color: rgba(31, 41, 55, 0);
+      }
+
+      100% {
+        box-shadow:
+          0 10px 15px -3px rgba(0, 0, 0, 0.4),
+          0 4px 6px -2px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
     }
   }
 </style>
