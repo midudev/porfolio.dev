@@ -36,6 +36,11 @@ const { description, title } = Astro.props
     <slot />
     <Footer />
     <style is:global>
+
+      @import 'tailwindcss';
+
+      @custom-variant dark (&:where(.dark, .dark *));
+
       :root {
         color-scheme: light dark;
       }
