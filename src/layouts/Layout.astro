@@ -66,12 +66,6 @@ const { description, title } = Astro.props;
         }
       }
 
-      #header-nav {
-        animation: blur linear both 0.5s;
-        animation-timeline: scroll();
-        animation-range: 0 500px;
-      }
-
       @keyframes blur {
         to {
           backdrop-filter: blur(20px);
