@@ -26,7 +26,7 @@ const { title, company, description, link, date, current = false } = Astro.props
           aria-hidden="true"
         >
           {current && (
-            <span class="animate-ping absolute inline-flex size-full rounded-full bg-yellow-400/40"></span>
+            <span class="animate-ping motion-reduce:animate-none absolute inline-flex size-full rounded-full bg-yellow-400/40"></span>
           )}
           <span
             class={`relative inline-flex size-[10px] rounded-full bg-yellow-400 ${current ? "shadow-[0_0_8px_2px_rgba(251,191,36,0.45)]" : ""}`}
