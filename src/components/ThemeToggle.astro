@@ -105,25 +105,36 @@ const THEMES = ["Light", "Dark", "System"]
 
   updateTheme()
 
-  document.addEventListener("click", () => themesMenu.classList.remove("open"))
+  let abortController: AbortController | null = null
 
-  document.getElementById("theme-toggle-btn")?.addEventListener("click", (e) => {
-    e.stopPropagation()
-    const isClosed = !themesMenu.classList.contains("open")
-    themesMenu.classList.toggle("open", isClosed)
-  })
+  const attachListeners = () => {
+    abortController?.abort()
+    abortController = new AbortController()
+    const { signal } = abortController
 
-  document.querySelectorAll<HTMLLIElement>(".themes-menu-option").forEach((element) => {
-    element.addEventListener("click", (e) => {
-      const target = e.target as HTMLElement
-      const theme = target.innerText.toLowerCase().trim() as ThemePreference
-      localStorage.setItem(THEME_STORAGE_KEY, theme)
-      updateTheme()
+    document.addEventListener("click", () => themesMenu.classList.remove("open"), { signal })
+
+    document.getElementById("theme-toggle-btn")?.addEventListener("click", (e) => {
+      e.stopPropagation()
+      const isClosed = !themesMenu.classList.contains("open")
+      themesMenu.classList.toggle("open", isClosed)
+    }, { signal })
+
+    document.querySelectorAll<HTMLLIElement>(".themes-menu-option").forEach((element) => {
+      element.addEventListener("click", (e) => {
+        const target = e.target as HTMLElement
+        const theme = target.innerText.toLowerCase().trim() as ThemePreference
+        localStorage.setItem(THEME_STORAGE_KEY, theme)
+        updateTheme()
+      }, { signal })
     })
-  })
+  }
+
+  attachListeners()
 
   document.addEventListener('astro:after-swap', () => {
     updateTheme();
+    attachListeners();
     window.scrollTo({ left: 0, top: 0, behavior: 'instant' });
   })
 </script>
