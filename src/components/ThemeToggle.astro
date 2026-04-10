@@ -112,12 +112,11 @@ const THEMES = ["Light", "Dark", "System"]
 
   updateTheme()
 
-  let abortController: AbortController | null = null
-
   const attachListeners = () => {
-    abortController?.abort()
-    abortController = new AbortController()
-    const { signal } = abortController
+    // Store controller on window so re-executions on navigation can abort previous listeners
+    (window as any).__themeAbortController?.abort();
+    (window as any).__themeAbortController = new AbortController()
+    const { signal } = (window as any).__themeAbortController as AbortController
 
     const toggleBtn = document.getElementById("theme-toggle-btn") as HTMLButtonElement
 
@@ -156,9 +155,13 @@ const THEMES = ["Light", "Dark", "System"]
 
   attachListeners()
 
-  document.addEventListener('astro:after-swap', () => {
-    updateTheme();
-    attachListeners();
-    window.scrollTo({ left: 0, top: 0, behavior: 'instant' });
-  })
+  // Guard registration so astro:after-swap handler is added only once across re-executions
+  if (!(window as any).__themeListenerRegistered) {
+    (window as any).__themeListenerRegistered = true
+    document.addEventListener('astro:after-swap', () => {
+      updateTheme();
+      attachListeners();
+      window.scrollTo({ left: 0, top: 0, behavior: 'instant' });
+    })
+  }
 </script>
