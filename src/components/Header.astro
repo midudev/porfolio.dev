@@ -29,6 +29,7 @@ const navItems = [
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
   <nav
+    aria-label="Navegación principal"
     class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
   >
     {
@@ -57,8 +58,10 @@ const navItems = [
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
               item.classList.add("text-blue-500")
+              item.setAttribute("aria-current", "true")
             } else {
               item.classList.remove("text-blue-500")
+              item.removeAttribute("aria-current")
             }
           })
         }
@@ -93,6 +96,13 @@ const navItems = [
     animation: nav-shadown 1s linear both;
     animation-timeline: scroll();
     animation-range: 0 100px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    nav {
+      animation: none;
+      @apply dark:bg-gray-800/90 bg-white/50 shadow-lg ring-1 backdrop-blur ring-white/10;
+    }
   }
 
   nav {

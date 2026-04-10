@@ -27,6 +27,12 @@ const { description, title } = Astro.props;
   </head>
 
   <body class="relative text-black dark:text-white">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-1/2 focus:-translate-x-1/2 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:dark:bg-gray-900 focus:text-black focus:dark:text-white focus:rounded-lg focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+    >
+      Ir al contenido principal
+    </a>
     <div
       class="fixed inset-0 z-[-2] bg-gray-50 dark:bg-gray-950
       bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
@@ -57,6 +63,14 @@ const { description, title } = Astro.props;
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
         }
       }
 
