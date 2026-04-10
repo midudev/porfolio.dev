@@ -29,8 +29,15 @@ const { description, title } = Astro.props;
   <body class="relative text-black dark:text-white">
     <div
       class="fixed inset-0 z-[-2] bg-gray-50 dark:bg-gray-950
-      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
-      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(251,191,36,0.14),rgba(255,255,255,0.9))]
+      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(251,191,36,0.08),rgba(0,0,0,0))]"
+    >
+    </div>
+    <!-- Grain texture overlay for tactile depth -->
+    <div
+      class="pointer-events-none fixed inset-0 z-[-1] opacity-[0.035] dark:opacity-[0.05]"
+      style="background-image: url('/noise.svg'); background-size: 200px 200px;"
+      aria-hidden="true"
     >
     </div>
     <Header />
@@ -103,6 +110,52 @@ const { description, title } = Astro.props;
             background-color: rgba(0, 0, 0, 0.3);
             border-radius: 9999px;
           }
+        }
+      }
+
+      /* ── Design system: staggered entrance animations ─────────────── */
+      @keyframes fade-in-up {
+        from {
+          opacity: 0;
+          translate: 0 20px;
+        }
+        to {
+          opacity: 1;
+          translate: 0 0;
+        }
+      }
+
+      .anim-fade-in {
+        animation: fade-in-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+      .anim-delay-1 { animation-delay: 120ms; }
+      .anim-delay-2 { animation-delay: 260ms; }
+      .anim-delay-3 { animation-delay: 400ms; }
+      .anim-delay-4 { animation-delay: 540ms; }
+
+      /* Gradient text utility for the hero name */
+      .gradient-name {
+        background: linear-gradient(135deg, #f59e0b 10%, #f97316 90%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* Scroll-triggered reveal for named sections (below the fold) */
+      @supports (animation-timeline: view()) {
+        [data-section] {
+          animation: fade-in-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+          animation-timeline: view();
+          animation-range: entry 0% entry 18%;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .anim-fade-in,
+        [data-section] {
+          animation: none !important;
+          opacity: 1 !important;
+          translate: none !important;
         }
       }
     </style>

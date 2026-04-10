@@ -8,6 +8,7 @@ const EXPERIENCE = [
     description:
       "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
     link: "https://twitch.tv/midudev",
+    current: true,
   },
   {
     date: "Septiembre 2022",
@@ -19,10 +20,10 @@ const EXPERIENCE = [
 ]
 ---
 
-<ol class="relative mt-16">
+<ol class="relative mt-16" aria-label="Experiencia laboral">
   {
     EXPERIENCE.map((experience) => (
-      <li class="">
+      <li>
         <ExperienceItem {...experience} />
       </li>
     ))
