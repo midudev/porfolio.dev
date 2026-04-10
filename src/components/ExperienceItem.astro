@@ -19,9 +19,9 @@ const { title, company, description, link, date, current = false } = Astro.props
 >
   <div class="relative pb-12 md:col-span-2">
     <div class="sticky top-0">
-      <!-- Timeline dot: vertically centered with the title -->
+      <!-- Timeline dot: h-7 matches text-xl line-height (1.75rem) for perfect centering -->
       <span
-        class="absolute -left-[42px] top-[10px] flex size-[14px] items-center justify-center"
+        class="absolute -left-[42px] top-0 flex h-7 w-[14px] items-center justify-center"
         aria-hidden="true"
       >
         {current && (
