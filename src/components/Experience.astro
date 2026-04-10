@@ -5,8 +5,8 @@ import experience from "@/data/experience.json"
 
 <ol class="relative mt-16" aria-label="Experiencia laboral">
   {
-    experience.map((exp) => (
-      <li>
+    experience.map((exp, i) => (
+      <li class="anim-fade-in" style={`animation-delay: ${i * 150}ms`}>
         <ExperienceItem {...exp} />
       </li>
     ))

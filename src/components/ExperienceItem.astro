@@ -19,20 +19,21 @@ const { title, company, description, link, date, current = false } = Astro.props
 >
   <div class="relative pb-12 md:col-span-2">
     <div class="sticky top-0">
-      <!-- Timeline dot: h-7 matches text-xl line-height (1.75rem) for perfect centering -->
-      <span
-        class="absolute -left-[42px] top-0 flex h-7 w-[14px] items-center justify-center"
-        aria-hidden="true"
-      >
-        {current && (
-          <span class="animate-ping absolute inline-flex size-full rounded-full bg-yellow-400/40"></span>
-        )}
+      <!-- Title row with dot: flex ensures perfect vertical centering -->
+      <div class="flex items-center">
         <span
-          class={`relative inline-flex size-[10px] rounded-full bg-yellow-400 ${current ? "shadow-[0_0_8px_2px_rgba(251,191,36,0.45)]" : ""}`}
-        ></span>
-      </span>
-
-      <h3 class="text-xl font-bold text-yellow-400">{title}</h3>
+          class="absolute -left-[42px] flex size-[14px] items-center justify-center"
+          aria-hidden="true"
+        >
+          {current && (
+            <span class="animate-ping absolute inline-flex size-full rounded-full bg-yellow-400/40"></span>
+          )}
+          <span
+            class={`relative inline-flex size-[10px] rounded-full bg-yellow-400 ${current ? "shadow-[0_0_8px_2px_rgba(251,191,36,0.45)]" : ""}`}
+          ></span>
+        </span>
+        <h3 class="text-xl font-bold text-yellow-400">{title}</h3>
+      </div>
       <h4 class="font-semibold text-xl text-gray-600 dark:text-white">{company}</h4>
       <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">{date}</time>
     </div>
