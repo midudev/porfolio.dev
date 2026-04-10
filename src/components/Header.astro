@@ -26,15 +26,15 @@ const navItems = [
 ---
 
 <header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
+  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-4"
 >
   <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
+    class="header-nav flex gap-x-1 px-4 py-1.5 text-sm font-medium rounded-full text-gray-600 dark:text-gray-300 justify-center items-center border border-transparent"
   >
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-blue-500"
+          class="nav-link relative block px-3 py-1.5 rounded-full transition-colors duration-200 hover:text-yellow-500 dark:hover:text-yellow-400"
           aria-label={link.label}
           href={link.url}
         >
@@ -42,7 +42,9 @@ const navItems = [
         </a>
       ))
     }
-    <ThemeToggle />
+    <div class="ml-2 pl-2 border-l border-gray-300/30 dark:border-white/10">
+      <ThemeToggle />
+    </div>
   </nav>
 </header>
 
@@ -56,9 +58,11 @@ const navItems = [
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-blue-500")
+              item.classList.add("text-yellow-500", "dark:text-yellow-400", "bg-yellow-400/10")
+              item.classList.remove("text-gray-600", "dark:text-gray-300")
             } else {
-              item.classList.remove("text-blue-500")
+              item.classList.remove("text-yellow-500", "dark:text-yellow-400", "bg-yellow-400/10")
+              item.classList.add("text-gray-600", "dark:text-gray-300")
             }
           })
         }
@@ -75,7 +79,6 @@ const navItems = [
       observer.observe(section)
     })
 
-    // Cleanup function
     document.onvisibilitychange = () => {
       if (document.visibilityState === "hidden") {
         observer.disconnect()
@@ -89,22 +92,26 @@ const navItems = [
 </script>
 
 <style>
-  nav {
-    animation: nav-shadown 1s linear both;
+  .header-nav {
+    animation: nav-appear 1s linear both;
     animation-timeline: scroll();
     animation-range: 0 100px;
   }
 
-  nav {
-    @apply dark:bg-gray-800/90 bg-white/50;
+  .header-nav {
+    @apply dark:bg-gray-900/80 bg-white/60;
   }
 
-  @keyframes nav-shadown {
+  .nav-link.text-yellow-500 {
+    @apply font-semibold;
+  }
+
+  @keyframes nav-appear {
     0% {
-      @apply dark:bg-gray-800/0 bg-white/0;
+      @apply dark:bg-gray-900/0 bg-white/0 border-transparent shadow-none;
     }
     to {
-      @apply shadow-lg ring-1 backdrop-blur ring-white/10;
+      @apply shadow-lg ring-1 backdrop-blur-md ring-white/10 dark:ring-white/5 border-gray-200/20 dark:border-white/5;
     }
   }
 </style>
