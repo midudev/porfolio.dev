@@ -1,5 +1,17 @@
-<h2
-	class={`flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white ${Astro.props.className}`}
->
+---
+const { className } = Astro.props
+---
+
+<div class="mb-8">
+  <h2
+    class={`flex items-center text-3xl font-bold tracking-tight gap-x-3 text-black/80 dark:text-white ${className ?? ""}`}
+  >
     <slot />
-</h2>
+  </h2>
+  <!-- Gradient accent underline -->
+  <div
+    class="mt-3 h-px w-20 bg-gradient-to-r from-yellow-400/70 to-transparent"
+    aria-hidden="true"
+  >
+  </div>
+</div>

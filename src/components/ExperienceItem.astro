@@ -1,5 +1,6 @@
 ---
 import LinkInline from "./LinkInline.astro"
+import ArrowRight from "./icons/ArrowRight.astro"
 
 interface Props {
   title: string
@@ -7,9 +8,10 @@ interface Props {
   description: string
   link?: string
   date: string
+  current?: boolean
 }
 
-const { title, company, description, link, date } = Astro.props
+const { title, company, description, link, date, current = false } = Astro.props
 ---
 
 <div
@@ -17,11 +19,21 @@ const { title, company, description, link, date } = Astro.props
 >
   <div class="relative pb-12 md:col-span-2">
     <div class="sticky top-0">
-      <span class="text-yellow-400 -left-[42px] absolute rounded-full text-5xl"
-        >&bull;</span
-      >
-
-      <h3 class="text-xl font-bold text-yellow-400">{title}</h3>
+      <!-- Title row with dot: flex ensures perfect vertical centering -->
+      <div class="flex items-center">
+        <span
+          class="absolute -left-[42px] flex size-[14px] items-center justify-center"
+          aria-hidden="true"
+        >
+          {current && (
+            <span class="animate-ping motion-reduce:animate-none absolute inline-flex size-full rounded-full bg-yellow-400/40"></span>
+          )}
+          <span
+            class={`relative inline-flex size-[10px] rounded-full bg-yellow-400 ${current ? "shadow-[0_0_8px_2px_rgba(251,191,36,0.45)]" : ""}`}
+          ></span>
+        </span>
+        <h3 class="text-xl font-bold text-yellow-400">{title}</h3>
+      </div>
       <h4 class="font-semibold text-xl text-gray-600 dark:text-white">{company}</h4>
       <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">{date}</time>
     </div>
@@ -31,24 +43,8 @@ const { title, company, description, link, date } = Astro.props
     {
       link && (
         <LinkInline href={link}>
-          Saber más{" "}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-5 icon icon-tabler icon-tabler-chevron-right"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <>
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M9 6l6 6l-6 6" />
-            </>
-          </svg>
+          Saber más sobre {company}{" "}
+          <ArrowRight class="size-5" aria-hidden="true" />
         </LinkInline>
       )
     }

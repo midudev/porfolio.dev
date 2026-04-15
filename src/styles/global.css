@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@font-face {
+   font-family: 'Host Grotesk';
+   src: url('/HostGrotesk-VariableFont_wght.woff2') format('woff2-variations');
+   font-weight: 300 800;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Host Grotesk';
+   src: url('/HostGrotesk-Italic-VariableFont_wght.woff2') format('woff2-variations');
+   font-weight: 300 800;
+   font-style: italic;
+   font-display: swap;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+   --font-sans: 'Host Grotesk', ui-sans-serif, system-ui, sans-serif;
+}

@@ -1,21 +1,20 @@
 {
-  "name": "porfolio-dev",
+  "name": "midu-portfolio",
   "type": "module",
   "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview --host",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "0.5.6",
-    "@astrojs/tailwind": "5.1.0",
-    "@fontsource-variable/onest": "5.0.2",
-    "astro": "4.4.5",
-    "astro-robots-txt": "1.0.0",
-    "tailwindcss": "3.4.1",
-    "typescript": "5.3.3"
+    "@tailwindcss/vite": "^4.2.2",
+    "astro": "^6.1.7",
+    "astro-robots-txt": "^1.0.0",
+    "tailwindcss": "^4.2.2"
   }
 }
