@@ -1,20 +1,31 @@
 {
-  "name": "midu-portfolio",
-  "type": "module",
-  "version": "0.0.1",
-  "engines": {
-    "node": ">=22.12.0"
-  },
-  "scripts": {
-    "dev": "astro dev --host",
-    "build": "astro build",
-    "preview": "astro preview --host",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.2.2",
-    "astro": "^6.1.7",
-    "astro-robots-txt": "^1.0.0",
-    "tailwindcss": "^4.2.2"
-  }
+	"name": "wei-body",
+	"description": "",
+	"cloudflare": {
+		"label": "",
+		"products": [
+			"Workers"
+		],
+		"categories": [],
+		"preview_icon_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/394ca3c9-d351-4036-035a-9f6dfa26dd00/public",
+		"preview_image_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/f40a6577-eed5-4f3e-cef4-b5ef0a1be100/preview",
+		"publish": true
+	},
+	"dependencies": {
+		"@astrojs/sitemap": "3.7.2",
+		"astro": "^6.1.7",
+		"astro-robots-txt": "^1.0.0",
+		"typescript": "5.9.3"
+	},
+	"engines": {
+		"node": ">=22.12.0"
+	},
+	"private": true,
+	"scripts": {
+		"astro": "astro",
+		"build": "astro build --host",
+		"dev": "astro dev --host",
+		"preview": "astro build"
+	},
+	"type": "module"
 }

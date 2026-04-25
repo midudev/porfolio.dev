@@ -1,50 +1,41 @@
 ---
-import LinkInline from "./LinkInline.astro"
-import ArrowRight from "./icons/ArrowRight.astro"
+import LinkInline from "./LinkInline.astro";
+import ArrowRight from "./icons/ArrowRight.astro";
 
 interface Props {
-  title: string
-  company: string
-  description: string
-  link?: string
-  date: string
-  current?: boolean
+  title: string;
+  company: string;
+  description: string;
+  link?: string;
+  date: string;
+  current?: boolean;
 }
 
-const { title, company, description, link, date, current = false } = Astro.props
+const {
+  title,
+  company,
+  description,
+  link,
+  date,
+  current = false,
+} = Astro.props;
 ---
 
-<div
-  class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"
->
-  <div class="relative pb-12 md:col-span-2">
-    <div class="sticky top-0">
-      <!-- Title row with dot: flex ensures perfect vertical centering -->
-      <div class="flex items-center">
-        <span
-          class="absolute -left-[42px] flex size-[14px] items-center justify-center"
-          aria-hidden="true"
-        >
-          {current && (
-            <span class="animate-ping motion-reduce:animate-none absolute inline-flex size-full rounded-full bg-yellow-400/40"></span>
-          )}
-          <span
-            class={`relative inline-flex size-[10px] rounded-full bg-yellow-400 ${current ? "shadow-[0_0_8px_2px_rgba(251,191,36,0.45)]" : ""}`}
-          ></span>
-        </span>
-        <h3 class="text-xl font-bold text-yellow-400">{title}</h3>
-      </div>
-      <h4 class="font-semibold text-xl text-gray-600 dark:text-white">{company}</h4>
-      <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">{date}</time>
-    </div>
+<div class="experience-item">
+  <div class="experience-side">
+    <span
+      class={`experience-dot ${current ? "is-current" : ""}`}
+      aria-hidden="true"></span>
+    <h3 class="experience-role">{title}</h3>
+    <h4 class="experience-company">{company}</h4>
+    <time class="experience-date">{date}</time>
   </div>
-  <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
-    {description}
+  <div>
+    <p class="experience-description">{description}</p>
     {
       link && (
         <LinkInline href={link}>
-          Saber más sobre {company}{" "}
-          <ArrowRight class="size-5" aria-hidden="true" />
+          Saber más sobre {company} <ArrowRight aria-hidden="true" />
         </LinkInline>
       )
     }

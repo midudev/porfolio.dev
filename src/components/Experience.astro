@@ -1,12 +1,15 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro"
-import experience from "@/data/experience.json"
+import ExperienceItem from "./ExperienceItem.astro";
+import experience from "@/data/experience.json";
 ---
 
-<ol class="relative mt-16" aria-label="Experiencia laboral">
+<ol class="experience-list" aria-label="Experiencia laboral">
   {
     experience.map((exp, i) => (
-      <li class="anim-fade-in" style={`animation-delay: ${i * 150}ms`}>
+      <li
+        class="experience-entry anim-fade-in"
+        style={`animation-delay: ${i * 150}ms`}
+      >
         <ExperienceItem {...exp} />
       </li>
     ))

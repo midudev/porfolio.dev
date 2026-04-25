@@ -1,22 +1,20 @@
 [
   {
-    "date": "Septiembre 2022 - Actualidad",
-    "title": "Creador de Contenido",
-    "company": "Twitch",
-    "description": "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
-    "link": "https://twitch.tv/midudev",
-    "current": true
+    "date": "Octubre 2025 - Marzo 2026",
+    "title": "Monitor Bootcamp de Python",
+    "company": "Talento Tech (MinTIC)",
+    "description": "Apoyé académicamente un bootcamp de Python para IA, resolviendo dudas técnicas en vivo y reforzando conceptos prácticos. Coordiné mentorías virtuales sobre Python y ML, garantizando la accesibilidad del material didáctico e impulsando la retención estudiantil."
   },
   {
-    "date": "Junio 2016 - Septiembre 2022",
-    "title": "Lead Frontend Architect",
-    "company": "Adevinta Spain",
-    "description": "Parte del equipo Enablers Frontend en Adevinta Spain. Nuestra misión era conseguir que todos los verticales (Fotocasa, MilAnuncios, Habitaclia, Coches.net, Infojobs) convergieran tecnológicamente, con una arquitectura moderna, flexible y optimizada, fomentando buenas prácticas y dando talleres para compartir conocimiento."
+    "date": "Febrero 2024 - Noviembre 2025",
+    "title": "Director y Docente Curso Semestral de Linux y Software Libre",
+    "company": "Grupo GNU/Linux Universidad Distrital",
+    "description": "Diseñé e impartí un curso de Linux y Git desde fundamentos (Bash) hasta flujos colaborativos para estudiantes sin experiencia. Creé guías accesibles y laboratorios inclusivos basados en entornos reales, incorporando Docker, CI/CD y administración de servidores. Lideré y mejoré continuamente el currículo, innovando en metodologías de enseñanza y procesos de evaluación."
   },
   {
-    "date": "Marzo 2011 - Mayo 2016",
-    "title": "Senior Full-Stack Developer",
-    "company": "Hubii",
-    "description": "Start-up sobre localización de noticias y servicios de información. Desarrollé el website con Jade, BEM, Stylus y CoffeeScript; app de Firefox OS offline-first a 60fps; app de Smart TV con accesibilidad por mando a distancia y push notifications; y una API de Insights con NodeJS, Swagger y MongoDB para parsear contenido web con Big Data."
+    "date": "Enero 2022 - Diciembre 2024",
+    "title": "Desarrollador Full-Stack",
+    "company": "TIVIT",
+    "description": "Desarrollé aplicaciones web modernas con React y Next.js, priorizando la accesibilidad (WCAG 2.1 AA) y una experiencia de usuario fluida e inclusiva. Construí APIs RESTful seguras y escalables utilizando Spring Boot y Node.js, aplicando principios de Diseño Orientado a Dominios (DDD) y Arquitectura Limpia. Optimicé el manejo y persistencia de datos en entornos de alto rendimiento integrando PostgreSQL, MongoDB y Redis. Aseguré la calidad del software en ciclos ágiles (Scrum) a través de pruebas automatizadas, documentación estandarizada y análisis de código estático. Agilicé la entrega de valor mediante prácticas DevOps, gestionando pipelines CI/CD, infraestructura en contenedores (Docker, Kubernetes) y monitoreo continuo."
   }
 ]
