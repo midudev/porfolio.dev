@@ -1,6 +1,5 @@
 ---
 import "@fontsource-variable/onest";
-
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { ViewTransitions } from "astro:transitions";
@@ -8,19 +7,76 @@ import { ViewTransitions } from "astro:transitions";
 interface Props {
   title: string;
   description: string;
+  image?: string;
+  canonical?: string;
 }
 
-const { description, title } = Astro.props;
+const {
+  description,
+  title,
+  image = "/porfolio.webp",
+  canonical = Astro.url.href,
+} = Astro.props;
+
+const siteUrl = "https://porfolio.dev";
+const ogImage = new URL(image, siteUrl).toString();
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Miguel Ángel Durán",
+  url: siteUrl,
+  sameAs: [
+    "https://linkedin.com/in/midudev",
+    "https://github.com/midudev",
+    "https://twitter.com/midudev",
+  ],
+  jobTitle: "Ingeniero de Software y Creador de Contenido",
+  worksFor: {
+    "@type": "Organization",
+    name: "Freelance",
+  },
+};
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="author" content="Miguel Ángel Durán" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="midudev · Porfolio" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@midudev" />
+    <meta name="twitter:creator" content="@midudev" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- JSON-LD structured data -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(jsonLd)}
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
     <meta name="darkreader-lock" />
     <ViewTransitions />
